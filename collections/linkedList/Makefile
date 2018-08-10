@@ -11,29 +11,44 @@ CC 		= gcc
 CPP 	= g++
 RM 		= rm -rf
 
-INCLUDE_PATH = -I. -I./include
-LIBRARY_PATH = -L. -L./libs
-LIBS = 
+## defaug flag
+DEBUG_ENABLE = 1
 
-CFLAGS = $(INCLUDE_PATH)
-LDFLAGS = $(LIBRARY_PATH) $(LIBS)
+## source file path
+SRC_PATH 	:= .
+
+## target exec file name
+TARGET 		:= main
+
+## get all source files
+SRCS += $(wildcard $(SRC_PATH)/*.c)
+## all .0 based on all .c
+OBJS := $(SRCS:.c=.o)
+
+## add Include and Library
+SOURCE_HOME := .
+LIBRARYS := #opencv_core opencv_imgproc opencv_objdetect opencv_highgui
+INCLUDE_PATH += $(foreach dir, $(SOURCE_HOME), $(dir)/include)
+LIBRARY_PATH += $(foreach dir, $(SOURCE_HOME), $(dir)/lib)
+
+ifeq (1, ${DEBUG_ENABLE})
+CFLAGS += -D_DEBUG -O0 -g -D_DEBUG=1
+endif
+
+CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
+LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
+LDFLAGS += $(foreach lib, $(LIBRARYS), -l$(lib))
+
+###CFLAGS += -std=c++11
 
 
-TARGET = main
-SRCS = $(wildcard *.c)
-OBJS = $(SRCS:.c=.o)  # expands to list of object files
+all: build
 
-all: $(TARGET)
+build: 
+	$(CC) -c $(CFLAGS) $(SRCS)
+	$(CC) -o $(TARGET) $(CFLAGS) $(LDFLAGS) $(OBJS)
+	$(RM) $(OBJS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $<
+clean:
+	$(RM) $(OBJS) $(TARGET)
 
-$(TARGET): $(OBJS) 
-	$(CC) $(OBJS) -o $(TARGET) $(CFLAGS) $(LDFLAGS)
-
-
-clean: 
-	rm -rf $(OBJS)
-
-distclean: 
-	rm -rf $(OBJS) $(TARGET)
