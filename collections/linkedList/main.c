@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "linkedList.h"
 
-LinkedList* initLinkedList(int n)
+LinkedList* linkedList_init(int n)
 {
     int i;
     LinkedList *head, *node;
@@ -24,17 +24,17 @@ LinkedList* initLinkedList(int n)
 int main()
 {
     LinkedList* head;
-    head = initLinkedList(16);
-    printf("print LinkedList:\n");
-    printLinkedList(head);
+    head = linkedList_init(16);
+    printf("LinkedList print:\n");
+    linkedList_print(head);
 
-    printf("invertPrint LinkedList:\n");
-    invertPrint(head);
+    printf("LinkedList invertPrint:\n");
+    linkedList_invertPrint(head);
     printf("\n");
 
-    printf("invert LinkedList:\n");
-    head = invertLinkedList(head);
-    printLinkedList(head);
+    printf("LinkedList invert:\n");
+    head = linkedList_invert(head);
+    linkedList_print(head);
 
     return 0;
 }

@@ -1,10 +1,10 @@
-// Á´±íÊý¾Ý½á¹¹
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý½á¹¹
 
 #include "linkedList.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-void printLinkedList(LinkedList* node)
+void linkedList_print(LinkedList* node)
 {
     while (node)
     {
@@ -14,16 +14,16 @@ void printLinkedList(LinkedList* node)
     printf("\n");
 }
 
-void invertPrint(LinkedList* node)
+void linkedList_invertPrint(LinkedList* node)
 {
     if (node)
     {
-        invertPrint(node->next);
+        linkedList_invertPrint(node->next);
         printf("%d ", node->key);
     }
 }
 
-LinkedList* invertLinkedList(LinkedList* head)
+LinkedList* linkedList_invert(LinkedList* head)
 {
     LinkedList *pre, *cur, *temp;
     pre = head;
