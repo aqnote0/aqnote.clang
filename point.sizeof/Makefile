@@ -26,10 +26,10 @@ SRCS += $(wildcard $(SRC_PATH)/*.c)
 OBJS := $(SRCS:.c=.o)
 
 ## add Include and Library
-LIBRARY_HOME := /opt/aqnote
-LIBRARYS := 
-INCLUDE_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
-LIBRARY_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
+SOURCE_HOME := .
+LIBRARYS := pthread
+INCLUDE_PATH += $(foreach dir, $(SOURCE_HOME), $(dir)/include)
+LIBRARY_PATH += $(foreach dir, $(SOURCE_HOME), $(dir)/lib)
 
 ifeq (1, ${DEBUG_ENABLE})
 CFLAGS += -D_DEBUG -O0 -g -D_DEBUG=1
@@ -39,9 +39,7 @@ CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
 LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
 LDFLAGS += $(foreach lib, $(LIBRARYS), -l$(lib))
 
-## pkg-config
-#CFLAGS += `pkg-config --cflags xxx`
-#LDFLAGS += `pkg-config --libs xxx`
+###CFLAGS += -std=c++11
 
 
 all: build

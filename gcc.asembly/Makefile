@@ -12,7 +12,7 @@ CPP 	= g++
 RM 		= rm -rf
 
 ## defaug flag
-DEBUG_ENABLE = 1
+DEBUG_ENABLE = 0
 
 ## source file path
 SRC_PATH 	:= .
@@ -26,7 +26,7 @@ SRCS += $(wildcard $(SRC_PATH)/*.c)
 OBJS := $(SRCS:.c=.o)
 
 ## add Include and Library
-LIBRARY_HOME := /opt/aqnote
+LIBRARY_HOME := 
 LIBRARYS := 
 INCLUDE_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
 LIBRARY_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
@@ -35,8 +35,11 @@ ifeq (1, ${DEBUG_ENABLE})
 CFLAGS += -D_DEBUG -O0 -g -D_DEBUG=1
 endif
 
+## add include_path
 CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
+## add library_path
 LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
+## add library file
 LDFLAGS += $(foreach lib, $(LIBRARYS), -l$(lib))
 
 ## pkg-config
@@ -44,7 +47,10 @@ LDFLAGS += $(foreach lib, $(LIBRARYS), -l$(lib))
 #LDFLAGS += `pkg-config --libs xxx`
 
 
-all: build
+all: assembly
+
+assembly:
+	$(CC) -S $(CFLAGS) $(SRCS)
 
 build: 
 	$(CC) -c $(CFLAGS) $(SRCS)
@@ -56,3 +62,7 @@ clean:
 
 memcheck:
 	valgrind --tool=memcheck --leak-check=full ./$(TARGET) 
+
+
+
+

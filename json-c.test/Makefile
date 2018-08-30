@@ -27,7 +27,7 @@ OBJS := $(SRCS:.c=.o)
 
 ## add Include and Library
 LIBRARY_HOME := /opt/aqnote
-LIBRARYS := 
+LIBRARYS := json-c
 INCLUDE_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
 LIBRARY_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
 
@@ -55,4 +55,4 @@ clean:
 	$(RM) $(OBJS) $(TARGET)
 
 memcheck:
-	valgrind --tool=memcheck --leak-check=full ./$(TARGET) 
+	valgrind --tool=memcheck ./$(TARGET) 
