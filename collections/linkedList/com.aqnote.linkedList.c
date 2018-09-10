@@ -1,6 +1,6 @@
 // �������ݽṹ
 
-#include "linkedList.h"
+#include "com.aqnote.linkedList.h"
 #include <stdio.h>
 #include <stdlib.h>
 

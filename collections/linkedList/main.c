@@ -1,7 +1,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "linkedList.h"
+#include "com.aqnote.linkedList.h"
 
 LinkedList* linkedList_init(int n)
 {

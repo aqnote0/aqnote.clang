@@ -1,0 +1,88 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "thread/001",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/thread/001.pthread_usage/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/thread/001.pthread_usage",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "thread/001"
+        },
+        {
+            "name": "thread/002",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/thread/002.thread_array/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/thread/002.thread_array",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "thread/002"
+        },
+        {
+            "name": "json-c/001",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/json-c/001.test/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/json-c/001.test",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "json-c/001"
+        },
+        {
+            "name": "collections/linkedList",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/collections/linkedList/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/collections/linkedList",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "collections/linkedList"
+        }
+    ]
+}

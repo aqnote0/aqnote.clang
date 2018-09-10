@@ -7,8 +7,8 @@
 #
 
 APP_DEBUG = $(DEBUG)
-APP_HOME := 
-APP_LIBS := 
-APP_PKG  := 
+APP_HOME := .
+APP_LIBS :=  
+APP_PKG := 
 
 include ../../core.mk

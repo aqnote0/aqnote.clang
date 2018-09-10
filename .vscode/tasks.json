@@ -1,0 +1,79 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "thread/001",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "thread/001.pthread_usage",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "thread/002",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "thread/002.thread_array",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "json-c/001",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "json-c/001.test",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "collections/linkedList",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "collections/linkedList",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

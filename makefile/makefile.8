@@ -11,9 +11,6 @@ CC 		= gcc
 CPP 	= g++
 RM 		= rm -rf
 
-## defaug flag
-DEBUG_ENABLE = 1
-
 ## source file path
 SRC_PATH 	:= .
 
@@ -25,24 +22,29 @@ SRCS += $(wildcard $(SRC_PATH)/*.c)
 ## all .0 based on all .c
 OBJS := $(SRCS:.c=.o)
 
-## add Include and Library
-LIBRARY_HOME := /opt/aqnote
-LIBRARYS := 
-INCLUDE_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
-LIBRARY_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
+## defaug flag
+AQN_APP_DEBUG = $(APP_DEBUG)
 
-ifeq (1, ${DEBUG_ENABLE})
+## add Include and Library
+AQN_APP_HOME := $(APP_HOME)
+AQN_APP_LIBS := $(APP_LIBS)
+INCLUDE_PATH += $(foreach dir, $(AQN_APP_HOME), $(dir)/include)
+LIBRARY_PATH += $(foreach dir, $(AQN_APP_HOME), $(dir)/lib)
+
+ifeq (1, ${AQN_APP_DEBUG})
 CFLAGS += -D_DEBUG -O0 -g -D_DEBUG=1
 endif
 
 CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
 LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
-LDFLAGS += $(foreach lib, $(LIBRARYS), -l$(lib))
+LDFLAGS += $(foreach lib, $(AQN_APP_LIBS), -l$(lib))
+
+###CFLAGS += -std=c++11
 
 ## pkg-config
-#CFLAGS += `pkg-config --cflags xxx`
-#LDFLAGS += `pkg-config --libs xxx`
-
+AQN_APP_PKG := $(APP_PKG)
+CFLAGS += $(foreach config, $(AQN_APP_PKG), $(shell pkg-config --cflags $(config))) 
+LDFLAGS += $(foreach config, $(AQN_APP_PKG), $(shell pkg-config --libs $(config)))
 
 all: build
 

@@ -2,6 +2,7 @@
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "files.associations": {
         "json.h": "c",
-        "json_object.h": "c"
+        "json_object.h": "c",
+        "com.aqnote.linkedlist.h": "c"
     }
 }
