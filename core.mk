@@ -9,27 +9,31 @@
 ## command
 CC 		= gcc
 CPP 	= g++
-RM 		= rm -rf
+RM 		= rm -f
+AQN_APP_COMPILER = $(CC)
 
 ## source file path
 SRC_PATH 	:= .
 
 ## target exec file name
-TARGET 		:= main
+TARGET 		:= main.app
 
+
+AQN_APP_SOURCE = $(APP_SOURCE)
 ## get all source files
-SRCS += $(wildcard $(SRC_PATH)/*.c)
-## all .0 based on all .c
-OBJS := $(SRCS:.c=.o)
+SRCS += $(wildcard $(SRC_PATH)/*.$(AQN_APP_SOURCE))
+## all .0 based on all .c .cpp
+OBJS = $(SRCS:.$(AQN_APP_SOURCE)=.o)
+
 
 ## defaug flag
 AQN_APP_DEBUG = $(APP_DEBUG)
 
 ## add Include and Library
-AQN_APP_HOME := $(APP_HOME)
-AQN_APP_LIBS := $(APP_LIBS)
-INCLUDE_PATH += $(foreach dir, $(AQN_APP_HOME), $(dir)/include)
-LIBRARY_PATH += $(foreach dir, $(AQN_APP_HOME), $(dir)/lib)
+AQN_APP_LIBRARY_HOME := $(APP_LIBRARY_HOME)
+AQN_APP_LIBRARY_FILES := $(APP_LIBRARY_FILES)
+INCLUDE_PATH += $(foreach dir, $(AQN_APP_LIBRARY_HOME), $(dir)/include)
+LIBRARY_PATH += $(foreach dir, $(AQN_APP_LIBRARY_HOME), $(dir)/lib)
 
 ifeq (1, ${AQN_APP_DEBUG})
 CFLAGS += -D_DEBUG -O0 -g -D_DEBUG=1
@@ -37,21 +41,24 @@ endif
 
 CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
 LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
-LDFLAGS += $(foreach lib, $(AQN_APP_LIBS), -l$(lib))
+LDFLAGS += $(foreach lib, $(AQN_APP_LIBRARY_FILES), -l$(lib))
 
-###CFLAGS += -std=c++11
+ifeq (cpp, ${AQN_APP_SOURCE})
+AQN_APP_COMPILER = $(CPP)
+CFLAGS += -std=c++11
+endif
 
 ## pkg-config
-AQN_APP_PKG := $(APP_PKG)
-CFLAGS += $(foreach config, $(AQN_APP_PKG), $(shell pkg-config --cflags $(config))) 
-LDFLAGS += $(foreach config, $(AQN_APP_PKG), $(shell pkg-config --libs $(config)))
+AQN_APP_LIBRARY_PKG := $(APP_LIBRARY_PKG)
+CFLAGS += $(foreach config, $(AQN_APP_LIBRARY_PKG), $(shell pkg-config --cflags $(config))) 
+LDFLAGS += $(foreach config, $(AQN_APP_LIBRARY_PKG), $(shell pkg-config --libs $(config)))
 
 all: build
 
 build: 
-	$(CC) -c $(CFLAGS) $(SRCS)
-	$(CC) -o $(TARGET) $(CFLAGS) $(LDFLAGS) $(OBJS)
-	$(RM) $(OBJS)
+	$(AQN_APP_COMPILER) -c $(CFLAGS) $(SRCS)
+	$(AQN_APP_COMPILER) -o $(TARGET) $(CFLAGS) $(LDFLAGS) $(OBJS)
+#$(RM) $(OBJS)
 
 clean:
 	$(RM) $(OBJS) $(TARGET)

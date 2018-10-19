@@ -4,6 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
+                "/usr/include/gtk-2.0",
                 "/opt/aqnote/include"
             ],
             "defines": [],

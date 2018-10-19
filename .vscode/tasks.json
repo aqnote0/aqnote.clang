@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "thread/001.pthread_usage",
+                "cwd": "thread/001",
                 "env": {
                     "DEBUG": 1
                 },
@@ -26,7 +26,43 @@
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "thread/002.thread_array",
+                "cwd": "thread/002",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "thread/003",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "thread/003",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "thread/004",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "thread/004",
                 "env": {
                     "DEBUG": 1
                 },
@@ -44,7 +80,7 @@
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "json-c/001.test",
+                "cwd": "json-c/001",
                 "env": {
                     "DEBUG": 1
                 },
@@ -58,13 +94,68 @@
             }
         },
         {
-            "label": "collections/linkedList",
+            "label": "algorithm/001",
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "collections/linkedList",
+                "cwd": "algorithm/001",
                 "env": {
                     "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "algorithm/002",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "algorithm/002",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "framebuffer/001",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "framebuffer/001",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {
+                    
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "gtk/001",
+            "type": "shell",
+            "command": "make",
+            "args": [],
+            "options": {
+                "cwd": "001",
+                "env": {
+                    "DEBUG": "1"
                 },
                 "shell": {
                     

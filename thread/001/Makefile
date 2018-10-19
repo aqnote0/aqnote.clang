@@ -6,9 +6,13 @@
 #
 #
 
+
+## defaug flag
 APP_DEBUG = $(DEBUG)
-APP_HOME := /opt/aqnote
-APP_LIBS :=  json-c
-APP_PKG := 
+APP_SOURCE := c
+
+APP_LIBRARY_HOME :=
+APP_LIBRARY_FILES := pthread
+APP_LIBRARY_PKG  := 
 
 include ../../core.mk
