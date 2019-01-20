@@ -11,4 +11,4 @@ APP_HOME := /opt/aqnote
 APP_LIBS :=  pthread
 APP_PKG := json-c opencv
 
-include ../core.mk
+include ../main.makefile

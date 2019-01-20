@@ -6,9 +6,10 @@
 #
 #
 
-APP_DEBUG = $(DEBUG)
+APP_DEBUG  := $(DEBUG)
+APP_SOURCE := c
 APP_HOME := 
-APP_LIBS :=  pthread
+APP_LIBS := 
 APP_PKG := 
 
-include ../../core.mk
+include ../../main.makefile

@@ -11,4 +11,4 @@ APP_HOME := .
 APP_LIBS :=  
 APP_PKG := 
 
-include ../../core.mk
+include ../../main.makefile

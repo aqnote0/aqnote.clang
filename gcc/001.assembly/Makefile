@@ -11,4 +11,4 @@ APP_HOME := /opt/aqnote
 APP_LIBS :=  json-c
 APP_PKG := 
 
-include ../../core.mk
+include ../../main.makefile

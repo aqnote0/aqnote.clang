@@ -6,7 +6,7 @@
 
 void *runnable(void *arg);
 
-char message [] = "demo 001: PThread Usage";
+char message [] = "PThread Usage";
 
 int main() 
 {
