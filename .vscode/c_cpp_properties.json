@@ -4,10 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
+                "/usr/include/gtk-2.0",
                 "/opt/aqnote/include",
                 "/usr/include",
                 "/usr/include/x86_64-linux-gnu"
-
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

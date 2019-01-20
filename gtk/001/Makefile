@@ -6,9 +6,13 @@
 #
 #
 
-APP_DEBUG = $(DEBUG)
-APP_HOME := .
-APP_LIBS :=  pthread
-APP_PKG := 
 
-include ../../main.makefile
+## defaug flag
+APP_DEBUG = $(DEBUG)
+APP_SOURCE := c
+
+APP_LIBRARY_HOME 	:=
+APP_LIBRARY_FILES 	:= 
+APP_LIBRARY_PKG  	:= gtk+-2.0
+
+include ../../core.mk

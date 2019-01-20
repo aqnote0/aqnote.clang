@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "thread.usage",
+            "name": "thread/001",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread.usage/main.app",
+            "program": "${workspaceFolder}/thread/001/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread.usage",
+            "cwd": "${workspaceFolder}/thread/001",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
@@ -22,16 +22,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "thread.usage"
+            "preLaunchTask": "thread/001"
         },
         {
             "name": "thread/002",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread/002.thread_array/main.app",
+            "program": "${workspaceFolder}/thread/002/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/002.thread_array",
+            "cwd": "${workspaceFolder}/thread/002",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -45,13 +45,53 @@
             "preLaunchTask": "thread/002"
         },
         {
+            "name": "thread/003",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/thread/003/main.app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/thread/003",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "thread/003"
+        },
+        {
+            "name": "thread/004",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/thread/004/main.app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/thread/004",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "thread/004"
+        },
+        {
             "name": "json-c/001",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/json-c/001.test/main,app",
+            "program": "${workspaceFolder}/json-c/001/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/json-c/001.test",
+            "cwd": "${workspaceFolder}/json-c/001",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -65,13 +105,13 @@
             "preLaunchTask": "json-c/001"
         },
         {
-            "name": "collections/linkedList",
+            "name": "algorithm/001",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/collections/linkedList/main.app",
+            "program": "${workspaceFolder}/algorithm/001/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/collections/linkedList",
+            "cwd": "${workspaceFolder}/algorithm/001",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -82,7 +122,27 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "collections/linkedList"
+            "preLaunchTask": "algorithm/001"
+        },
+        {
+            "name": "algorithm/002",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/algorithm/002/main.app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/algorithm/002",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "algorithm/002"
         },
         {
             "name": "framebuffer/001",
@@ -103,6 +163,26 @@
                 }
             ],
             "preLaunchTask": "framebuffer/001"
+        },
+        {
+            "name": "gtk/001",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/gtk/001/main.app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/gtk/001",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gtk/001"
         }
     ]
 }

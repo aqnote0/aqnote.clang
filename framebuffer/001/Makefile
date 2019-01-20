@@ -9,7 +9,7 @@
 APP_DEBUG  := $(DEBUG)
 APP_SOURCE := c
 APP_HOME := 
-APP_LIBS := 
+APP_LIBS := pthread
 APP_PKG := 
 
 include ../../main.makefile

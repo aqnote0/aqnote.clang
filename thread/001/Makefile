@@ -13,4 +13,4 @@ LIBRARY_HOME 	:=
 LIBRARY_FILE 	:= pthread
 LIBRARY_PKG  	:= 
 
-include ../main.makefile
+include ../../main.makefile
