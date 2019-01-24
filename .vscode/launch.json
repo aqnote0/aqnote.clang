@@ -5,33 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "thread/001",
+            "name": "std/stdlib.sizeof",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread/001/main.app",
+            "program": "${workspaceFolder}/std/stdlib.sizeof/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/001",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "thread/001"
-        },
-        {
-            "name": "thread/002",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/thread/002/main.app",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/002",
+            "cwd": "${workspaceFolder}/std/stdlib.sizeof",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -42,16 +22,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "thread/002"
+            "preLaunchTask": "std/stdlib.sizeof"
         },
         {
-            "name": "thread/003",
+            "name": "std/stdlib.malloc",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread/003/main.app",
+            "program": "${workspaceFolder}/std/stdlib.malloc/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/003",
+            "cwd": "${workspaceFolder}/std/stdlib.malloc",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -62,16 +42,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "thread/003"
+            "preLaunchTask": "std/stdlib.malloc"
         },
         {
-            "name": "thread/004",
+            "name": "std/stdlib.qsort",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread/004/main.app",
+            "program": "${workspaceFolder}/std/stdlib.qsort/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/004",
+            "cwd": "${workspaceFolder}/std/stdlib.qsort",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -82,7 +62,87 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "thread/004"
+            "preLaunchTask": "std/stdlib.qsort"
+        },
+        {
+            "name": "thread/lifecycle",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/thread/lifecycle/main.app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/thread/lifecycle",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "thread/lifecycle"
+        },
+        {
+            "name": "thread/multithread",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/thread/multithread/main.app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/thread/multithread",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "thread/multithread"
+        },
+        {
+            "name": "thread/producer",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/thread/producer/main.app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/thread/producer",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "thread/producer"
+        },
+        {
+            "name": "thread/threadpool",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/thread/threadpool/main.app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/thread/threadpool",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "thread/threadpool"
         },
         {
             "name": "json-c/001",

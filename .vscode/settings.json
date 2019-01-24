@@ -1,9 +1,13 @@
 {
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "files.associations": {
+        "*.cmake": "makefile",
+        "*.makefile": "makefile",
+        "*.makefie": "makefile",
         "json.h": "c",
         "json_object.h": "c",
         "com.aqnote.linkedlist.h": "c",
-        "gtk.h": "c"
+        "gtk.h": "c",
+        "stdlib.h": "c"
     }
 }

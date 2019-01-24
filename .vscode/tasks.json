@@ -4,16 +4,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "thread/001",
+            "label": "std/stdlib.sizeof",
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "thread/001",
-                "env": {
-                },
-                "shell": {
-                    
-                }
+                "cwd": "std/stdlib.sizeof",
+                "env": {},
+                "shell": {}
             },
             "group": {
                 "kind": "build",
@@ -21,17 +18,13 @@
             }
         },
         {
-            "label": "thread/002",
+            "label": "std/stdlib.malloc",
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "thread/002",
-                "env": {
-                    "DEBUG": 1
-                },
-                "shell": {
-                    
-                }
+                "cwd": "std/stdlib.malloc",
+                "env": {},
+                "shell": {}
             },
             "group": {
                 "kind": "build",
@@ -39,17 +32,13 @@
             }
         },
         {
-            "label": "thread/003",
+            "label": "std/stdlib.qsort",
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "thread/003",
-                "env": {
-                    "DEBUG": 1
-                },
-                "shell": {
-                    
-                }
+                "cwd": "std/stdlib.qsort",
+                "env": {},
+                "shell": {}
             },
             "group": {
                 "kind": "build",
@@ -57,17 +46,61 @@
             }
         },
         {
-            "label": "thread/004",
+            "label": "thread/lifecycle",
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "thread/004",
+                "cwd": "thread/lifecycle",
+                "env": {},
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "thread/multithread",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "thread/multithread",
                 "env": {
                     "DEBUG": 1
                 },
-                "shell": {
-                    
-                }
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "thread/producer",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "thread/producer",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "thread/threadpool",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "thread/threadpool",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {}
             },
             "group": {
                 "kind": "build",
@@ -83,9 +116,7 @@
                 "env": {
                     "DEBUG": 1
                 },
-                "shell": {
-                    
-                }
+                "shell": {}
             },
             "group": {
                 "kind": "build",
@@ -101,9 +132,7 @@
                 "env": {
                     "DEBUG": 1
                 },
-                "shell": {
-                    
-                }
+                "shell": {}
             },
             "group": {
                 "kind": "build",
@@ -119,9 +148,7 @@
                 "env": {
                     "DEBUG": 1
                 },
-                "shell": {
-                    
-                }
+                "shell": {}
             },
             "group": {
                 "kind": "build",
@@ -137,9 +164,7 @@
                 "env": {
                     "DEBUG": 1
                 },
-                "shell": {
-                    
-                }
+                "shell": {}
             },
             "group": {
                 "kind": "build",
@@ -156,9 +181,7 @@
                 "env": {
                     "DEBUG": "1"
                 },
-                "shell": {
-                    
-                }
+                "shell": {}
             },
             "group": {
                 "kind": "build",

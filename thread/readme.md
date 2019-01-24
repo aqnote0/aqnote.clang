@@ -1,6 +1,6 @@
 # Thread Readme
 
-- 001: 线程基础使用Demo
-- 002: 线程数组管理Demo
-- 003: 生产者消费者模型Demo
-- 004: 线程池Demo
+- lifecycle: 线程生命周期
+- multithread: 多线程数组管理
+- producer: 生产者消费者模型
+- threadpool: 线程池
