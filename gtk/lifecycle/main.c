@@ -39,8 +39,8 @@ int main(int argc, char *argv[])
     GtkWidget *window;
     GtkWidget *button;
     gtk_init(&argc, &argv);
-    window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_default_size(window, 640, 480);
+    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_default_size(GTK_WINDOW(window), 640, 480);
 
     gtk_signal_connect(GTK_OBJECT(window), "delete_event", GTK_SIGNAL_FUNC(delete_event), NULL);
     gtk_signal_connect(GTK_OBJECT(window), "destroy", GTK_SIGNAL_FUNC(destory), NULL);
@@ -56,29 +56,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

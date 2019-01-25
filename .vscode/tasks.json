@@ -108,11 +108,11 @@
             }
         },
         {
-            "label": "json-c/001",
+            "label": "json-c/lifecycle",
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "json-c/001",
+                "cwd": "json-c/lifecycle",
                 "env": {
                     "DEBUG": 1
                 },
@@ -172,12 +172,12 @@
             }
         },
         {
-            "label": "gtk/001",
+            "label": "gtk/lifecycle",
             "type": "shell",
             "command": "make",
             "args": [],
             "options": {
-                "cwd": "001",
+                "cwd": "gtk/lifecycle",
                 "env": {
                     "DEBUG": "1"
                 },

@@ -145,13 +145,13 @@
             "preLaunchTask": "thread/threadpool"
         },
         {
-            "name": "json-c/001",
+            "name": "json-c/lifecycle",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/json-c/001/main.app",
+            "program": "${workspaceFolder}/json-c/lifecycle/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/json-c/001",
+            "cwd": "${workspaceFolder}/json-c/lifecycle",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -162,7 +162,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "json-c/001"
+            "preLaunchTask": "json-c/lifecycle"
         },
         {
             "name": "algorithm/001",
@@ -225,13 +225,13 @@
             "preLaunchTask": "framebuffer/001"
         },
         {
-            "name": "gtk/001",
+            "name": "gtk/lifecycle",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/gtk/001/main.app",
+            "program": "${workspaceFolder}/gtk/lifecycle/main.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/gtk/001",
+            "cwd": "${workspaceFolder}/gtk/lifecycle",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -242,7 +242,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "gtk/001"
+            "preLaunchTask": "gtk/lifecycle"
         }
     ]
 }

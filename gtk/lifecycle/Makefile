@@ -1,16 +1,16 @@
-
 #     Title: 
 #    Author: "Peng Li"<aqnote@qq.com>
-#     CDate: 20181210
+#     CDate: 20180809
 #     MDate:
 # Copyright: http://aqnote.com/LICENSE
 #
 #
+
 SOURCE_DEBUG  	:= $(DEBUG)
 SOURCE_TYPE 	:= c
 
-LIBRARY_HOME 	:= /opt/aqnote
-LIBRARY_FILE 	:= pthread
-LIBRARY_PKG  	:= json-c opencv
+LIBRARY_HOME 	:= 
+LIBRARY_FILE 	:= 
+LIBRARY_PKG  	:= gtk+-2.0
 
-include main.makefile
+include ../../main.makefile

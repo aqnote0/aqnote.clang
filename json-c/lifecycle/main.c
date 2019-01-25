@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
+ *         Author:  "Peng Li"<aqnote@aqnote.com>
  *   Organization:  
  *
  * =====================================================================================
@@ -19,8 +19,7 @@
 #include <stdio.h>
 #include <json-c/json.h>
 
-int 
-main( int argc, char **argv )
+int main(int argc, char **argv)
 {
     json_object *sJsonObject;
 
@@ -34,14 +33,14 @@ main( int argc, char **argv )
     sJsonObject = json_tokener_parse(cJsonString);
     printf("jsonObject.to_json=%s\n", json_object_to_json_string(sJsonObject));
     printf("jsonObject.to_json2=%s\n", json_object_to_json_string_ext(sJsonObject, JSON_C_TO_STRING_NOSLASHESCAPE));
-    printf("jsonObject.to_json3=%s\n", json_object_to_json_string_ext(sJsonObject, JSON_C_TO_STRING_PRETTY|JSON_C_TO_STRING_SPACED));
+    printf("jsonObject.to_json3=%s\n", json_object_to_json_string_ext(sJsonObject, JSON_C_TO_STRING_PRETTY | JSON_C_TO_STRING_SPACED));
 
     json_object *sTmpJsonObject = NULL;
     json_object_deep_copy(sJsonObject, &sTmpJsonObject, NULL);
     json_object_object_add(sJsonObject, "jsonObject", sTmpJsonObject);
 
     json_object_object_add(sJsonObject, "k4", json_object_new_boolean(1));
-    printf("jsonObject=%s\n", json_object_to_json_string_ext(sJsonObject, JSON_C_TO_STRING_PRETTY|JSON_C_TO_STRING_SPACED));
+    printf("jsonObject=%s\n", json_object_to_json_string_ext(sJsonObject, JSON_C_TO_STRING_PRETTY | JSON_C_TO_STRING_SPACED));
 
     printf("%s=%s\n", "键", json_object_get_string(json_object_object_get(sJsonObject, "键")));
     json_object_get(sTmpJsonObject);
@@ -50,4 +49,3 @@ main( int argc, char **argv )
 
     return 0;
 }
-
