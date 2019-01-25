@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  001.c
+ *       Filename:  gtk/lifecycle/main.c
  *
  *    Description:  调用GTK+-2.0库，作界面开发
  *
@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
+ *         Author:  "Peng Li"<aqnote@aqnote.com>
  *   Organization:  
  *
  * =====================================================================================

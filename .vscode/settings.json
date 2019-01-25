@@ -18,6 +18,15 @@
         "json_object_iterator.h": "c",
         "json_c_version.h": "c",
         "gdk.h": "c",
-        "gtkaboutdialog.h": "c"
+        "gtkaboutdialog.h": "c",
+        "com.aqnote.framebuffer.case.h": "c",
+        "gtkfilechooser.h": "c",
+        "gtkfilefilter.h": "c",
+        "glib-object.h": "c",
+        "gtkaccelgroup.h": "c",
+        "gdkapplaunchcontext.h": "c",
+        "gdkscreen.h": "c",
+        "gdkdisplay.h": "c",
+        "gdktypes.h": "c"
     }
 }

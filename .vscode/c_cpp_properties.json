@@ -4,10 +4,18 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/include/gtk-2.0",
                 "/opt/aqnote/include",
                 "/usr/include",
-                "/usr/include/x86_64-linux-gnu"
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+                "/usr/lib/x86_64-linux-gnu/gtk-2.0/include",
+                "/usr/include/glib-2.0",
+                "/usr/include/cairo",
+                "/usr/include/pango-1.0",
+                "/usr/include/atk-1.0",
+                "/usr/include/gdk-pixbuf-2.0",
+                "/usr/include/gtk-2.0",
+                "/usr/include/gtk-3.0"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

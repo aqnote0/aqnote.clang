@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
+ *         Author:  "Peng Li"<aqnote@aqnote.com>
  *   Organization:  
  *
  * =====================================================================================

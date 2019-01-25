@@ -10,7 +10,10 @@ SOURCE_DEBUG  	:= 1
 SOURCE_TYPE 	:= c
 
 LIBRARY_HOME 	:= 
-LIBRARY_FILE 	:= pthread
+LIBRARY_FILE 	:= 
 LIBRARY_PKG  	:= 
 
 include ../../main.makefile
+
+assembly:
+	$(SOURCE_COMPILER) $(CFLAGS) $(SRCS) -S

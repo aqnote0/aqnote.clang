@@ -20,8 +20,8 @@
 
 #define COM_AQNOTE_FRAMEBUFFER_CASE_H
 
-extern int 
-com_aqnote_framebuffer_case1_get_display_info( );
+extern int
+com_aqnote_framebuffer_case1_get_display_info();
 
 extern int
 com_aqnote_framebuffer_case2_draw_screen();
