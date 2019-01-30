@@ -27,6 +27,7 @@
         "gdkapplaunchcontext.h": "c",
         "gdkscreen.h": "c",
         "gdkdisplay.h": "c",
-        "gdktypes.h": "c"
+        "gdktypes.h": "c",
+        "aqnote_stdlib.h": "c"
     }
 }

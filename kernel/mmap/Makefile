@@ -1,12 +1,12 @@
-
 #     Title: 
 #    Author: "Peng Li"<aqnote@qq.com>
-#     CDate: 20181210
+#     CDate: 20180809
 #     MDate:
 # Copyright: http://aqnote.com/LICENSE
 #
 #
-SOURCE_DEBUG  	:= 1
+
+SOURCE_DEBUG  	:= $(DEBUG)
 SOURCE_TYPE 	:= c
 
 LIBRARY_HOME 	:= 

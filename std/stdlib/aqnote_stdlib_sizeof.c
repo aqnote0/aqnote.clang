@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(int args, char *argv[])
+int aqnote_stdlib_sizeof(int args, char *argv[])
 {
     int array[10];
     int(*ptr)[10];

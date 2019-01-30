@@ -12,7 +12,25 @@
 
 int comparator(const void *, const void *);
 
-int main()
+/**
+ * <0 The element pointed by pa goes before the element pointed by pb 
+ * =0 The element pointed by pa is equivalent to the element pointed by pb
+ * >0 The element pointed by pa goes after the element pointed by pb
+ */
+int comparator(const void *pa, const void *pb)
+{
+  int a = *(const int *)pa;
+  int b = *(const int *)pb;
+
+  if (a > b)
+    return 1;
+  else if (a < b)
+    return -1;
+  else
+    return 0;
+}
+
+int aqnote_stdlib_qsort()
 {
   int array[] = {INT_MIN, 1, 3, 2, INT_MAX, 4, 0, 8, 7, 9, 5, 6};
 
@@ -30,22 +48,4 @@ int main()
   printf("\n");
 
   return 0;
-}
-
-/**
- * <0 The element pointed by pa goes before the element pointed by pb 
- * =0 The element pointed by pa is equivalent to the element pointed by pb
- * >0 The element pointed by pa goes after the element pointed by pb
- */
-int comparator(const void *pa, const void *pb)
-{
-  int a = *(const int *)pa;
-  int b = *(const int *)pb;
-
-  if (a > b)
-    return 1;
-  else if (a < b)
-    return -1;
-  else
-    return 0;
 }

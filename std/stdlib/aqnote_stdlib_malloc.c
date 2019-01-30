@@ -10,11 +10,13 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
+ *         Author:  "Peng Li"<aqnote@aqnote.com>, 
  *   Organization:  
  *
  * =====================================================================================
  */
+#include "aqnote_stdlib.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -63,7 +65,7 @@ void test_memory_leak()
     printf("%s\n", x);
 }
 
-int main()
+int aqnote_stdlib_malloc()
 {
     printf("start running test case\n");
 
