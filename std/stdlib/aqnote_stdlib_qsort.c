@@ -3,15 +3,20 @@
 #include <stdlib.h>
 #include <limits.h>
 
+//////////////////////////////////////////////////////////////////////////////
+// Declare
+//////////////////////////////////////////////////////////////////////////////
 /*
  * function: test qsort function
  * author: Peng Li<aqnote@aqnote.com>
  * date: 20180130
  *
 */
-
 int comparator(const void *, const void *);
 
+//////////////////////////////////////////////////////////////////////////////
+// Define
+//////////////////////////////////////////////////////////////////////////////
 /**
  * <0 The element pointed by pa goes before the element pointed by pb 
  * =0 The element pointed by pa is equivalent to the element pointed by pb
@@ -30,6 +35,9 @@ int comparator(const void *pa, const void *pb)
     return 0;
 }
 
+//////////////////////////////////////////////////////////////////////////////
+// TC_1: 测试排序算法
+//////////////////////////////////////////////////////////////////////////////
 int aqnote_stdlib_qsort()
 {
   int array[] = {INT_MIN, 1, 3, 2, INT_MAX, 4, 0, 8, 7, 9, 5, 6};
@@ -41,9 +49,7 @@ int aqnote_stdlib_qsort()
   qsort(array, length, elementSize, comparator);
 
   for (int i = 0; i < length; i++)
-  {
     printf("%d ", array[i]);
-  }
 
   printf("\n");
 
