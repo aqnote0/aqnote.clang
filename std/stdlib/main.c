@@ -20,9 +20,9 @@
 
 int main(int argc, char *argv)
 {
-    // aqnote_stdlib_malloc();
+    aqnote_stdlib_malloc();
     // aqnote_stdlib_qsort();
-    aqnote_stdlib_sizeof();
+    // aqnote_stdlib_sizeof();
 
     return 0;
 }
