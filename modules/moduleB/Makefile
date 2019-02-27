@@ -1,0 +1,10 @@
+
+MODULE_NAME = libmoduleB
+MODULE_TYPE = .a
+MODULE_BUILD = DEBUG
+
+LIBRARY_HOME := 
+LIBRARY_FILE := 
+LIBRARY_PKG  := 
+
+include ${PROJECT_HOME}/global.makefile
