@@ -1,15 +1,17 @@
+# Constant
+MODULE_NAME 		= multimodule
+MODULE_INTRODUCE 	=
 
-MODULE_NAME = multimodule
-MODULE_INTRODUCE = 
-MODULE_DEPENDS = moduleA moduleB
-MODULE_BUILD = DEBUG
+# Depends
+MODULE_DEPENDS_PROJ 		= moduleA moduleB
+MODULE_DEPENDS_PKG			=
+MODULE_DEPENDS_NONSTD_PATH 	=
+MODULE_DEPENDS_NONSTD_FILE	=
 
-MODULE_COMPILER = cpp
-MOUDLE_OUTPUT = multimodule.app
-
-LIBRARY_HOME := 
-LIBRARY_FILE := 
-LIBRARY_PKG  := 
+# Compile
+MODULE_COMPILER 	= cpp
+# MODULE_BUILD 		= DEBUG
+MODULE_OUTPUT 		= $(MODULE_NAME).app
 
 include ../../constant.makefile
 include ${PROJECT_HOME}/global.makefile

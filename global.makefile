@@ -12,7 +12,7 @@ CPP 	= g++
 RM 		= rm -f
 
 COMPILER = $(CC)
-ifeq (cpp, ${MODULE_COMPILER})
+ifeq "cpp" "${MODULE_COMPILER}"
 	COMPILER = $(CPP)
 endif
 
@@ -27,9 +27,15 @@ OBJECTS = $(C_SOURCES:.c=.o)
 CPP_SOURCES = $(wildcard src/*.cpp)
 OBJECTS += $(CPP_SOURCES:.cpp=.o)
 
+## add static and dynamic
+# -L/usr/lib64/mysql \
+ -Wl,-Bstatic -lmysqlclient \
+ -Wl,-Bdynamic -lz -lcrypt -lnsl -lm \
+ -L/usr/lib64 -lssl -lcrypto
+
 ## add Source Depends
-CFLAGS += $(foreach module, $(MODULE_DEPENDS), -I${PROJECT_MODULES_HOME}/${module}/include)
-LDFLAGS +=$(foreach module, $(MODULE_DEPENDS), ${PROJECT_MODULES_HOME}/${module}/lib$(module).a)
+CFLAGS += $(foreach module, $(MODULE_DEPENDS_PROJ), -I${PROJECT_MODULES_HOME}/${module}/include)
+LDFLAGS +=$(foreach module, $(MODULE_DEPENDS_PROJ), ${PROJECT_MODULES_HOME}/${module}/lib$(module).a)
 
 ## add Binary Depends
 CFLAGS += -I./include
@@ -37,19 +43,19 @@ LDFLAGS += -L./lib
 
 ## add System Depends
 ### add Include
-INCLUDE_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
+INCLUDE_PATH += $(foreach dir, $(MODULE_DEPENDS_NONSTD_PATH), $(dir)/include)
 CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
 
 ### add Library Path
-LIBRARY_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
+LIBRARY_PATH += $(foreach dir, $(MODULE_DEPENDS_NONSTD_PATH), $(dir)/lib)
 LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
 
 ### add Library File
-LDFLAGS += $(foreach lib, $(LIBRARY_FILE), -l$(lib))
+LDFLAGS += $(foreach lib, $(MODULE_DEPENDS_NONSTD_FILE), -l$(lib))
 
 ### add pkg-config
-CFLAGS += $(foreach config, $(LIBRARY_PKG), $(shell pkg-config --cflags $(config))) 
-LDFLAGS += $(foreach config, $(LIBRARY_PKG), $(shell pkg-config --libs $(config)))
+CFLAGS += $(foreach config, $(MODULE_DEPENDS_PKG), $(shell pkg-config --cflags $(config))) 
+LDFLAGS += $(foreach config, $(MODULE_DEPENDS_PKG), $(shell pkg-config --libs $(config)))
 
 BUILD = RELEASE
 ifeq "DEBUG" "${MODULE_BUILD}"
@@ -60,7 +66,7 @@ endif
 all: $(BUILD)
 
 .PHONY: RELEASE
-RELEASE: CFLAGS += -O2 -D NDEBUG -Wall -fwhole-program
+RELEASE: CFLAGS += -O2 -D NDEBUG -Wall #-fwhole-program
 RELEASE: $(TARGETS)
 
 .PHONY: DEBUG

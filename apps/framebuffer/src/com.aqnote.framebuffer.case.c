@@ -56,7 +56,7 @@ int com_aqnote_framebuffer_case1_get_display_info()
 
     printf("ioctl FBIOGET_FSCREENINFO ok\n");
     printf("\tid=%s\n", fb_fixinfo.id);
-    printf("\tsmem_start=%#x\n", fb_fixinfo.smem_start);
+    printf("\tsmem_start=%#x\n", (unsigned int)fb_fixinfo.smem_start);
     printf("\tmem_len=%d\n", fb_fixinfo.smem_len);
     printf("\ttype=%d\n", fb_fixinfo.type);
     printf("\ttype_aux=%d\n", fb_fixinfo.type_aux);
@@ -65,7 +65,7 @@ int com_aqnote_framebuffer_case1_get_display_info()
     printf("\typanstep=%d\n", fb_fixinfo.ypanstep);
     printf("\tywrapstep=%d\n", fb_fixinfo.ywrapstep);
     printf("\tline_length=%d\n", fb_fixinfo.line_length);
-    printf("\tmmio_start=%#x\n", fb_fixinfo.mmio_start);
+    printf("\tmmio_start=%#x\n", (unsigned int)fb_fixinfo.mmio_start);
     printf("\tmmio_len=%#x\n", fb_fixinfo.mmio_len);
     printf("\taccel=%d\n", fb_fixinfo.accel);
     printf("\treserved[0]=%d\n", fb_fixinfo.reserved[0]);

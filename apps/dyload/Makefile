@@ -1,4 +1,4 @@
-
+#
 #     Title: 
 #    Author: "Peng Li"<aqnote@qq.com>
 #     CDate: 20181210
@@ -6,35 +6,39 @@
 # Copyright: http://aqnote.com/LICENSE
 #
 #
-MODULE_NAME = gcc.assembly
-MODULE_INTRODUCE = 
-MODULE_DEPENDS = 
-MODULE_BUILD = DEBUG
 
+# Constant
+MODULE_NAME = dyload
+MODULE_INTRODUCE =
+
+# Depends
+MODULE_DEPENDS_PROJ 		=
+MODULE_DEPENDS_PKG			=
+MODULE_DEPENDS_NONSTD_PATH 	=
+MODULE_DEPENDS_NONSTD_FILE	=
+
+# Compile
 MODULE_COMPILER = cpp
-MOUDLE_OUTPUT = main.app
-
-LIBRARY_HOME := 
-LIBRARY_FILE := 
-LIBRARY_PKG  := 
-
-include ../../constant.makefile
-include ${PROJECT_HOME}/global.makefile
+MODULE_BUILD = DEBUG
+MODULE_OUTPUT = $(MODULE_NAME).app
 
 modules = so1 so2
 
+COMPILER = g++
+
 .PHONY: all
-all: main.app
+all: $(MODULE_OUTPUT)
 
 .PHONY: $(modules)
 $(modules):
 	$(MAKE) -C $@ all
 
-main.app: src/main.o $(modules)
-	g++ -o main.app src/main.o -L./so1 -L./so2 -lso1 -lso2 -ldl -Wl,-rpath=./so1 -Wl,-rpath=./so2
+$(MODULE_OUTPUT): src/main.o $(modules)
+	$(COMPILER) -o $@ src/main.o -L./so1 -lso1 -L./so2 -lso2 -ldl -Wl,-rpath=./so1 -Wl,-rpath=./so2
 
-src/main.o: src/main.cpp 
-	g++ -o src/main.o -c src/main.cpp
+## compile .cpp file
+%.o : %.cpp
+	${COMPILER} -o $@ -c $< -std=c++11 ${CFLAGS}
 
 .PHONY:clean
 clean: cleanmodule

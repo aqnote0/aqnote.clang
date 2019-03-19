@@ -6,11 +6,10 @@
 # Copyright: http://aqnote.com/LICENSE
 #
 #
-MODULE_NAME = gcc.assembly
-MODULE_INTRODUCE =
-MODULE_BUILD = DEBUG
 
-MODULE_OUTPUT = main.app
+# Constant
+MODULE_NAME 		= framebuffer
+MODULE_INTRODUCE 	=
 
 # Depends
 MODULE_DEPENDS_PROJ 		=
@@ -18,8 +17,12 @@ MODULE_DEPENDS_PKG			=
 MODULE_DEPENDS_NONSTD_PATH 	=
 MODULE_DEPENDS_NONSTD_FILE	=
 
+# Compile
+MODULE_COMPILER 	=
+MODULE_BUILD 		= DEBUG
+MODULE_OUTPUT 		= $(MODULE_NAME).app
+
+
+
 include ../../constant.makefile
 include ${PROJECT_HOME}/global.makefile
-
-assembly:
-	$(CPP) $(CFLAGS) $(C_SOURCES) -S

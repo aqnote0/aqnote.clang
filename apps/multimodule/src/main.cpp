@@ -20,6 +20,8 @@
 #include "moduleA.hpp"
 #include "moduleB.hpp"
 
+using namespace std;
+
 int main(int argc, char** argv)
 {
     A a;

@@ -1,13 +1,17 @@
-
+# Constant
 MODULE_NAME = moduleB
 MODULE_INTRODUCE =
 
-MODULE_COMPILER = cpp
-MODULE_OUTPUT = libmoduleB.a libmoduleB.so
+# Depends
+MODULE_DEPENDS_PROJ 		=
+MODULE_DEPENDS_PKG			=
+MODULE_DEPENDS_NOSTD_PATH 	=
+MODULE_DEPENDS_NOSTD_FILE	=
 
-LIBRARY_HOME := 
-LIBRARY_FILE := 
-LIBRARY_PKG  := 
+# Compile
+MODULE_COMPILER = cpp
+# MODULE_BUILD 		= DEBUG
+MODULE_OUTPUT = lib$(MODULE_NAME).a lib$(MODULE_NAME).so
 
 include ../../constant.makefile
 include ${PROJECT_HOME}/global.makefile
