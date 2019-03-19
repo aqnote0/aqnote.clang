@@ -6,13 +6,6 @@
 #
 #
 
-## variable
-#SOURCE_TYPE
-#SOURCE_DEBUG
-#SOURCE_COMPILER
-#LIBRARY_PKG
-#LIBRARY_HOME
-
 ## command
 CC 		= gcc
 CPP 	= g++
@@ -31,15 +24,15 @@ SRCS += $(wildcard $(SOURCE_PATH)/*.$(SOURCE_TYPE))
 ## all .0 based on all .c .cpp
 OBJS = $(SRCS:.$(SOURCE_TYPE)=.o)
 
-## add Include and Library
-INCLUDE_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
-LIBRARY_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
-
 ifeq (1, ${SOURCE_DEBUG})
 CFLAGS += -D_DEBUG -O0 -g -D_DEBUG=1
 endif
 
+## add Include and Library
+INCLUDE_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
 CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
+
+LIBRARY_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
 LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
 LDFLAGS += $(foreach lib, $(LIBRARY_FILE), -l$(lib))
 

@@ -3,5 +3,6 @@
     "files.associations": {
         "*.cmake": "makefile",
         "*.makefile": "makefile"
-    }
+    },
+    "restructuredtext.confPath": ""
 }

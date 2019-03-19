@@ -1,4 +1,7 @@
 
+.PHONY: all
+all: libso1.so
+
 libso1.so: src/so1.o
 	g++ -o libso1.so src/so1.o -shared
 

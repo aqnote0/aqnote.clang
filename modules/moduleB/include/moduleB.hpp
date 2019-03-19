@@ -9,6 +9,7 @@ class B
     string name;
     
   public:
+    B() : name("B") {}
     B(string name) : name(name) {}
     string get();
 };

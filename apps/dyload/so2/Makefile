@@ -1,3 +1,6 @@
+.PHONY: all
+all: libso2.so
+
 libso2.so: src/so2.o
 	g++ -o libso2.so src/so2.o -shared 
 

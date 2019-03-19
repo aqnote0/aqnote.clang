@@ -5,7 +5,7 @@ export PROJECT_APPS_HOME 		= ${PROJECT_HOME}/apps
 export PROJECT_DOCS_HOME 		= ${PROJECT_HOME}/docs
 export PROJECT_MODULES_HOME 	= ${PROJECT_HOME}/modules
 
-modules = modules/moduleA modules/moduleB apps/demo
+modules = modules/moduleA modules/moduleB apps/multimodule
 
 .PHONY: all
 all: ${modules}
@@ -19,12 +19,6 @@ clean:
 	@for module in ${modules}; do \
 		${MAKE} -C $$module clean; \
 	done
-	
-# compile .c .cpp
-%.o: %.c
-	${CC} -o $@ -c $<  ${CFLAGS}
-%.o: %.cpp
-	${CPP} -o $@ -c $<  ${CFLAGS}
 
 echo:
 	echo [${modules}] > /dev/null

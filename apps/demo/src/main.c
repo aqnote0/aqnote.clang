@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "moduleA.hpp"
+
 int main()
 {
   int total = 1;

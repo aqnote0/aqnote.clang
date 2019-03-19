@@ -6,38 +6,48 @@
 #
 #
 
-## variable
-#SOURCE_DEBUG
-#APP_COMPILER
-#LIBRARY_PKG
-#LIBRARY_HOME
-#SOURCE_TYPE
-
 ## command
 CC 		= gcc
 CPP 	= g++
 RM 		= rm -f
 
-## target exec file name
-TARGET 		:= $(MODULE_NAME)${MODULE_TYPE}
+COMPILER = $(CC)
+ifeq (cpp, ${MODULE_COMPILER})
+	COMPILER = $(CPP)
+endif
 
-## get all source files
+## targets
+TARGETS 	:= $(MODULE_OUTPUT)
+
+## get c source files
 C_SOURCES = $(wildcard src/*.c)
-CPP_SOURCES = $(wildcard src/*.cpp)
-## all .0 based on all .c .cpp
-OBJECTS = $(C_SOURCES:.c=.o) $(CPP_SOURCES:.cpp=.o)
+OBJECTS = $(C_SOURCES:.c=.o)
 
-## add Project Dependency Modules
+## get cpp source file
+CPP_SOURCES = $(wildcard src/*.cpp)
+OBJECTS += $(CPP_SOURCES:.cpp=.o)
+
+## add Source Depends
 CFLAGS += $(foreach module, $(MODULE_DEPENDS), -I${PROJECT_MODULES_HOME}/${module}/include)
 LDFLAGS +=$(foreach module, $(MODULE_DEPENDS), ${PROJECT_MODULES_HOME}/${module}/lib$(module).a)
 
-## add Include and Library
-INCLUDE_PATH += ./include $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
-LIBRARY_PATH += ./lib $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
-CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
-LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir)) $(foreach lib, $(LIBRARY_FILE), -l$(lib))
+## add Binary Depends
+CFLAGS += -I./include
+LDFLAGS += -L./lib
 
-## pkg-config
+## add System Depends
+### add Include
+INCLUDE_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/include)
+CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
+
+### add Library Path
+LIBRARY_PATH += $(foreach dir, $(LIBRARY_HOME), $(dir)/lib)
+LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
+
+### add Library File
+LDFLAGS += $(foreach lib, $(LIBRARY_FILE), -l$(lib))
+
+### add pkg-config
 CFLAGS += $(foreach config, $(LIBRARY_PKG), $(shell pkg-config --cflags $(config))) 
 LDFLAGS += $(foreach config, $(LIBRARY_PKG), $(shell pkg-config --libs $(config)))
 
@@ -51,34 +61,35 @@ all: $(BUILD)
 
 .PHONY: RELEASE
 RELEASE: CFLAGS += -O2 -D NDEBUG -Wall -fwhole-program
-RELEASE: $(TARGET)
+RELEASE: $(TARGETS)
 
 .PHONY: DEBUG
 DEBUG: CFLAGS += -O0 -D_DEBUG -Wall -g -D_DEBUG=1
-DEBUG: $(TARGET)
+DEBUG: $(TARGETS)
 
 $(MODULE_NAME).app: $(OBJECTS)
-	$(CPP) -o $@ $(OBJECTS) $(LDFLAGS)
+	$(COMPILER) -o $@ $(OBJECTS) $(LDFLAGS)
 
-$(MODULE_NAME).so: $(OBJECTS)
-	$(CPP) -o $(TARGET_SO) $(OBJECTS) $(LDFLAGS) -shared
+lib$(MODULE_NAME).so: $(OBJECTS)
+	$(COMPILER) -o $@ $(OBJECTS) $(LDFLAGS) -shared
 
-$(MODULE_NAME).a: $(OBJECTS)
+lib$(MODULE_NAME).a: $(OBJECTS)
 	ar $(ARFLAGS) $@ $(OBJECTS)
 
-## compile .c .cpp file
+## compile .c file
 %.o : %.c
 	${CC} -o $@ -c $< -std=c99 ${CFLAGS}
+## compile .cpp file
 %.o : %.cpp
 	${CPP} -o $@ -c $< -std=c++11 ${CFLAGS}
 
 .PHONY: clean
 clean:
-	$(RM) $(OBJECTS) $(TARGET)
+	$(RM) $(OBJECTS) $(TARGETS)
 
 .PHONY: memcheck
 memcheck:
-	valgrind --tool=memcheck --leak-check=full ./$(TARGET) 
+	valgrind --tool=memcheck --leak-check=full ./$(TARGETS) 
 
 echo:
 	echo [${PROJECT_MODULES_HOME}] > /dev/null

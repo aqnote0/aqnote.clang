@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  main.c
+ *       Filename:  main.cpp
  *
  *    Description:  
  *
@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
+ *         Author:  "Peng Li<aqnote@qq.com>"
  *   Organization:  
  *
  * =====================================================================================
@@ -23,10 +23,10 @@
 int main(int argc, char** argv)
 {
     A a;
-    cout << a.get() << endl;
+    cout << "CALL " << a.get() << endl;
 
-    B b("Hello B");
-    cout << b.get() << endl;
+    B b;
+    cout << "CALL " << b.get() << endl;
     return 0;
 }
 

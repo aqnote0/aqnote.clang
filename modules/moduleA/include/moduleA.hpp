@@ -9,7 +9,7 @@ private:
   string name;
 
 public:
-  A() : name("Hello A") {}
+  A() : name("A") {}
   A(string name) : name(name) {}
   string get();
 };
