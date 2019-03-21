@@ -27,7 +27,6 @@ endif
 ## targets
 TARGETS 	:= $(MODULE_OUTPUT)
 
-
 ## get c source files
 C_SOURCES = $(wildcard $(SRC_DIR)/*.c)
 OBJECTS = $(C_SOURCES:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
@@ -89,23 +88,21 @@ DEBUG: $(TARGETS)
 
 $(MODULE_NAME).app: $(OBJECTS)
 	@mkdir -p bin
-	$(COMPILER) -o $@ $(OBJECTS) $(LDFLAGS)
-	@mv $@ bin
+	$(COMPILER) -o bin/$@ $(OBJECTS) $(LDFLAGS)
 
 lib$(MODULE_NAME).so: $(OBJECTS)
-	$(COMPILER) -o $@ $(OBJECTS) $(LDFLAGS) -shared
 	@mkdir -p lib
-	@mv $@ lib
+	$(COMPILER) -o lib/$@ $(OBJECTS) $(LDFLAGS) -shared
 
 lib$(MODULE_NAME).a: $(OBJECTS)
-	ar $(ARFLAGS) $@ $(OBJECTS)
 	@mkdir -p lib
-	@mv $@ lib
+	ar $(ARFLAGS) lib/$@ $(OBJECTS)
 
 ## compile .c file
 $(BUILD_DIR)/%.o : $(SRC_DIR)/%.c
 	@mkdir -p $(BUILD_DIR)
 	${CC} -o $@ -c $< -std=c99 ${CFLAGS}
+
 ## compile .cpp file
 $(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp
 	@mkdir -p $(BUILD_DIR)
@@ -115,6 +112,7 @@ $(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp
 clean:
 	@$(RM) -rf $(BUILD_DIR)
 	@$(RM) -rf $(BIN_DIR)
+	@$(RM) -rf $(LIB_DIR)
 
 .PHONY: memcheck
 memcheck:
