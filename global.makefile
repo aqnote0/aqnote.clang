@@ -1,10 +1,18 @@
 #     Title: common used Makefile
-#    Author: "Peng Li"<aqnote@qq.com>
+#    Author: "Peng Li"<aqnote@aqnote.com>
 #     CDate: 20180809
 #     MDate:
 # Copyright: http://aqnote.com/LICENSE
 #
 #
+
+## module structure
+INC_DIR		:= include
+SRC_DIR		:= src
+LIB_DIR		:= lib
+BIN_DIR 	:= bin
+BUILD_DIR 	:= build
+DEPENDS_DIR := depends
 
 ## command
 CC 		= gcc
@@ -19,13 +27,14 @@ endif
 ## targets
 TARGETS 	:= $(MODULE_OUTPUT)
 
+
 ## get c source files
-C_SOURCES = $(wildcard src/*.c)
-OBJECTS = $(C_SOURCES:.c=.o)
+C_SOURCES = $(wildcard $(SRC_DIR)/*.c)
+OBJECTS = $(C_SOURCES:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 
 ## get cpp source file
-CPP_SOURCES = $(wildcard src/*.cpp)
-OBJECTS += $(CPP_SOURCES:.cpp=.o)
+CPP_SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+OBJECTS += $(CPP_SOURCES:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 
 ## add static and dynamic
 # -L/usr/lib64/mysql \
@@ -33,29 +42,34 @@ OBJECTS += $(CPP_SOURCES:.cpp=.o)
  -Wl,-Bdynamic -lz -lcrypt -lnsl -lm \
  -L/usr/lib64 -lssl -lcrypto
 
+ ## add Include
+ CFLAGS += -I./include
+
 ## add Source Depends
-CFLAGS += $(foreach module, $(MODULE_DEPENDS_PROJ), -I${PROJECT_MODULES_HOME}/${module}/include)
-LDFLAGS +=$(foreach module, $(MODULE_DEPENDS_PROJ), ${PROJECT_MODULES_HOME}/${module}/lib$(module).a)
+ifneq "" "$(MODULE_DEPENDS_PROJ)"
+	CFLAGS += $(foreach module, $(MODULE_DEPENDS_PROJ), -I${PROJECT_MODULES_HOME}/${module}/include)
+	LDFLAGS += $(foreach module, $(MODULE_DEPENDS_PROJ), ${PROJECT_MODULES_HOME}/${module}/lib/lib$(module).a)
+endif
 
 ## add Binary Depends
-CFLAGS += -I./include
-LDFLAGS += -L./lib
+DEPENDS = $(shell ls depends 2>/dev/null)
+ifneq "" "$(DEPENDS)"
+	CFLAGS += $(foreach module, $(DEPENDS), -I$(DEPENDS_DIR)/${module}/include)
+	LDFLAGS += $(foreach module, $(DEPENDS), $(DEPENDS_DIR)/${module}/lib/lib$(module).a)
+endif
 
 ## add System Depends
-### add Include
-INCLUDE_PATH += $(foreach dir, $(MODULE_DEPENDS_NONSTD_PATH), $(dir)/include)
-CFLAGS += $(foreach dir, $(INCLUDE_PATH), -I$(dir))
-
-### add Library Path
-LIBRARY_PATH += $(foreach dir, $(MODULE_DEPENDS_NONSTD_PATH), $(dir)/lib)
-LDFLAGS += $(foreach dir, $(LIBRARY_PATH), -L$(dir))
-
-### add Library File
-LDFLAGS += $(foreach lib, $(MODULE_DEPENDS_NONSTD_FILE), -l$(lib))
+ifneq "" "$(MODULE_DEPENDS_NONSTD_PATH)"
+	CFLAGS += $(foreach module, $(MODULE_DEPENDS_NONSTD_PATH), -I$(module)/include)
+	LDFLAGS += $(foreach module, $(MODULE_DEPENDS_NONSTD_PATH), -L$(module)/lib)
+	LDFLAGS += $(foreach lib, $(MODULE_DEPENDS_NONSTD_FILE), -l$(lib))
+endif
 
 ### add pkg-config
-CFLAGS += $(foreach config, $(MODULE_DEPENDS_PKG), $(shell pkg-config --cflags $(config))) 
-LDFLAGS += $(foreach config, $(MODULE_DEPENDS_PKG), $(shell pkg-config --libs $(config)))
+ifneq "" "$(MODULE_DEPENDS_PKG)"
+	CFLAGS += $(foreach config, $(MODULE_DEPENDS_PKG), $(shell pkg-config --cflags $(config))) 
+	LDFLAGS += $(foreach config, $(MODULE_DEPENDS_PKG), $(shell pkg-config --libs $(config)))
+endif
 
 BUILD = RELEASE
 ifeq "DEBUG" "${MODULE_BUILD}"
@@ -74,28 +88,38 @@ DEBUG: CFLAGS += -O0 -D_DEBUG -Wall -g -D_DEBUG=1
 DEBUG: $(TARGETS)
 
 $(MODULE_NAME).app: $(OBJECTS)
+	@mkdir -p bin
 	$(COMPILER) -o $@ $(OBJECTS) $(LDFLAGS)
+	@mv $@ bin
 
 lib$(MODULE_NAME).so: $(OBJECTS)
 	$(COMPILER) -o $@ $(OBJECTS) $(LDFLAGS) -shared
+	@mkdir -p lib
+	@mv $@ lib
 
 lib$(MODULE_NAME).a: $(OBJECTS)
 	ar $(ARFLAGS) $@ $(OBJECTS)
+	@mkdir -p lib
+	@mv $@ lib
 
 ## compile .c file
-%.o : %.c
+$(BUILD_DIR)/%.o : $(SRC_DIR)/%.c
+	@mkdir -p $(BUILD_DIR)
 	${CC} -o $@ -c $< -std=c99 ${CFLAGS}
 ## compile .cpp file
-%.o : %.cpp
+$(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp
+	@mkdir -p $(BUILD_DIR)
 	${CPP} -o $@ -c $< -std=c++11 ${CFLAGS}
 
 .PHONY: clean
 clean:
-	$(RM) $(OBJECTS) $(TARGETS)
+	@$(RM) -rf $(BUILD_DIR)
+	@$(RM) -rf $(BIN_DIR)
 
 .PHONY: memcheck
 memcheck:
-	valgrind --tool=memcheck --leak-check=full ./$(TARGETS) 
+	valgrind --tool=memcheck --leak-check=full ./$(TARGETS)
 
+.PHONY: echo
 echo:
-	echo [${PROJECT_MODULES_HOME}] > /dev/null
+	@echo $(DEPENDS_DIR)

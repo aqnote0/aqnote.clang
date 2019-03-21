@@ -1,6 +1,6 @@
 
 #     Title: 
-#    Author: "Peng Li"<aqnote@qq.com>
+#    Author: "Peng Li"<aqnote@aqnote.com>
 #     CDate: 20181210
 #     MDate:
 # Copyright: http://aqnote.com/LICENSE
@@ -21,8 +21,6 @@ MODULE_DEPENDS_NONSTD_FILE	=
 MODULE_COMPILER 	=
 MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
-
-
 
 include ../../constant.makefile
 include ${PROJECT_HOME}/global.makefile

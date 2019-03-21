@@ -1,6 +1,6 @@
 
 #     Title: 
-#    Author: "Peng Li"<aqnote@qq.com>
+#    Author: "Peng Li"<aqnote@aqnote.com>
 #     CDate: 20181210
 #     MDate:
 # Copyright: http://aqnote.com/LICENSE

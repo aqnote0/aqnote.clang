@@ -1,3 +1,12 @@
+#
+#     Title: 
+#    Author: "Peng Li"<aqnote@aqnote.com>
+#     CDate: 20181210
+#     MDate:
+# Copyright: http://aqnote.com/LICENSE
+#
+#
+
 ifeq "" "${PROJECT_HOME}"
 	PROJECT_HOME 			= ../..
 	PROJECT_BUILD_HOME 		= ${PROJECT_HOME}/build

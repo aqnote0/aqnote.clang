@@ -1,3 +1,12 @@
+#
+#     Title: 
+#    Author: "Peng Li"<aqnote@aqnote.com>
+#     CDate: 20181210
+#     MDate:
+# Copyright: http://aqnote.com/LICENSE
+#
+#
+
 # Constant
 MODULE_NAME 		= multimodule
 MODULE_INTRODUCE 	=
