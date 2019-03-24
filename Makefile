@@ -14,7 +14,10 @@ export PROJECT_APPS_HOME 		= ${PROJECT_HOME}/apps
 export PROJECT_DOCS_HOME 		= ${PROJECT_HOME}/docs
 export PROJECT_MODULES_HOME 	= ${PROJECT_HOME}/modules
 
-modules = modules/moduleA modules/moduleB apps/multimodule apps/framebuffer apps/dyload
+modules = \
+	modules/moduleA modules/moduleB apps/multimodule \
+	apps/framebuffer \
+	apps/dyload
 
 # Variable
 export MODULE_BUILD = DEBUG
