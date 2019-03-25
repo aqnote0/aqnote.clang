@@ -61,8 +61,9 @@ endif
 ifneq "" "$(MODULE_DEPENDS_NONSTD_PATH)"
 	CFLAGS += $(foreach module, $(MODULE_DEPENDS_NONSTD_PATH), -I$(module)/include)
 	LDFLAGS += $(foreach module, $(MODULE_DEPENDS_NONSTD_PATH), -L$(module)/lib)
-	LDFLAGS += $(foreach lib, $(MODULE_DEPENDS_NONSTD_FILE), -l$(lib))
 endif
+
+LDFLAGS += $(foreach lib, $(MODULE_DEPENDS_NONSTD_FILE), -l$(lib))
 
 ### add pkg-config
 ifneq "" "$(MODULE_DEPENDS_PKG)"

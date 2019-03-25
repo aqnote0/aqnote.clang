@@ -3,7 +3,8 @@
     "files.associations": {
         "*.cmake": "makefile",
         "*.makefile": "makefile",
-        "string": "cpp"
+        "string": "cpp",
+        "pthread.h": "c"
     },
     "restructuredtext.confPath": ""
 }

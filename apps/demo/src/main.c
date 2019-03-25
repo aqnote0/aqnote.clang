@@ -1,21 +1,10 @@
 #include <stdio.h>
+#include <limits.h>
+#include <time.h>
+#include <stdlib.h>
 
-#include "moduleA.hpp"
-
-int main()
+int main(int argc, char **argv)
 {
-  int total = 1;
-  int i = 1;
-
-  while(i <= 11)
-  {
-    total *= i;
-    i += 2;
-  }
-
-  printf("total=%d\n", total);
-  
-  getchar();
-
-  return 0;
+    
+    return EXIT_SUCCESS;
 }
