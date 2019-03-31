@@ -14,7 +14,8 @@ export PROJECT_APPS_HOME 		= ${PROJECT_HOME}/apps
 export PROJECT_DOCS_HOME 		= ${PROJECT_HOME}/docs
 export PROJECT_MODULES_HOME 	= ${PROJECT_HOME}/modules
 
-modules = apps/helloworld								\
+modules = apps/aqnote									\
+	apps/helloworld										\
 	modules/aqalgorithm apps/algorithm.test				\
 	apps/dyload 										\
 	apps/framebuffer 									\
@@ -22,6 +23,7 @@ modules = apps/helloworld								\
 	apps/json-c.lifecycle 								\
 	apps/kernel.mmap									\
 	modules/moduleA modules/moduleB apps/multimodule 	\
+	apps/std.assert										\
 	apps/std.stdlib 									\
 	apps/thread.lifecycle 								\
 	apps/thread.multithread 							\
