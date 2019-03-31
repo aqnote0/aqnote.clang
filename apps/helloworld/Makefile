@@ -8,7 +8,7 @@
 #
 
 # Constant
-MODULE_NAME 		= demo
+MODULE_NAME 		= hellowrold
 MODULE_INTRODUCE 	=
 
 # Depends

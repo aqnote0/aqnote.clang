@@ -14,7 +14,8 @@ export PROJECT_APPS_HOME 		= ${PROJECT_HOME}/apps
 export PROJECT_DOCS_HOME 		= ${PROJECT_HOME}/docs
 export PROJECT_MODULES_HOME 	= ${PROJECT_HOME}/modules
 
-modules = modules/aqalgorithm apps/algorithm.test		\
+modules = apps/helloworld								\
+	modules/aqalgorithm apps/algorithm.test				\
 	apps/dyload 										\
 	apps/framebuffer 									\
 	apps/gtk.lifecycle 									\
