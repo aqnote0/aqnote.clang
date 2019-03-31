@@ -1,8 +1,9 @@
-#include "com.aqnote.sort.h"
+
+#include "aqnote_sort.h"
 
 void swap(int a[], int n, int m);
 
-void bubbleSort(int array[], int n)
+void aqnote_sort_bubble(int array[], int n)
 {
 	int i,j,tmp;
 	for (i = 0; i < n - 1; i++) 
@@ -19,7 +20,7 @@ void bubbleSort(int array[], int n)
 	}
 }
 
-void insertSort(int a[], int n)
+void aqnote_sort_insert(int a[], int n)
 {
 	int i,j,tmp;
 	for (i = 1; i < n; i++) {
@@ -31,7 +32,7 @@ void insertSort(int a[], int n)
 	}
 }
 
-void selectSort(int a[], int n)
+void aqnote_sort_select(int a[], int n)
 {
 	int i, j, k;
 	for (i = 0; i< n-1; i++) {
@@ -48,7 +49,7 @@ void selectSort(int a[], int n)
 	}
 }
 
-void quickSort(int a[], int n)
+void aqnote_sort_quick(int a[], int n)
 {
 	int i;
 	int last = 0;
@@ -60,8 +61,8 @@ void quickSort(int a[], int n)
 		}
 	}
 	swap(a, 0, last);
-	quickSort(a, last);
-	quickSort(a+last+1, n-last-1);
+	aqnote_sort_quick(a, last);
+	aqnote_sort_quick(a+last+1, n-last-1);
 }
 
 // inner function

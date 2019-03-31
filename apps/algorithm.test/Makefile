@@ -1,18 +1,18 @@
 #
 #     Title: 
 #    Author: "Peng Li"<aqnote@aqnote.com>
-#     CDate: 20190324
+#     CDate: 20180809
 #     MDate:
 # Copyright: http://aqnote.com/LICENSE
 #
 #
 
 # Constant
-MODULE_NAME 		= aqnote.sort
+MODULE_NAME 		= algorithm.test
 MODULE_INTRODUCE 	=
 
 # Depends
-MODULE_DEPENDS_PROJ 		=
+MODULE_DEPENDS_PROJ 		= aqalgorithm
 MODULE_DEPENDS_PKG			=
 MODULE_DEPENDS_NONSTD_PATH 	=
 MODULE_DEPENDS_NONSTD_FILE	=

@@ -4,7 +4,9 @@
         "*.cmake": "makefile",
         "*.makefile": "makefile",
         "string": "cpp",
-        "pthread.h": "c"
+        "pthread.h": "c",
+        "aqnote_sort.h": "c",
+        "aqnote_linked_list.h": "c"
     },
     "restructuredtext.confPath": ""
 }

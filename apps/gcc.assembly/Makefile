@@ -18,8 +18,8 @@ MODULE_DEPENDS_PKG			=
 MODULE_DEPENDS_NONSTD_PATH 	=
 MODULE_DEPENDS_NONSTD_FILE	=
 
-include ../../constant.makefile
-include ${PROJECT_HOME}/global.makefile
-
 assembly:
 	$(CPP) $(CFLAGS) $(C_SOURCES) -S
+
+include ../../constant.makefile
+include ${PROJECT_HOME}/global.makefile
