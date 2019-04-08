@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "std/stdlib.sizeof",
+            "name": "apps/framebuffer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/std/stdlib.sizeof/main.app",
+            "program": "${workspaceFolder}/apps/framebuffer/framebuffer.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/std/stdlib.sizeof",
+            "cwd": "${workspaceFolder}/apps/framebuffer",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -22,16 +22,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "std/stdlib.sizeof"
+            "preLaunchTask": "apps/framebuffer"
         },
         {
-            "name": "std/stdlib.malloc",
+            "name": "gtk.lifecycle",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/std/stdlib.malloc/main.app",
+            "program": "${workspaceFolder}/apps/gtk.lifecycle/gtk.lifecycle.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/std/stdlib.malloc",
+            "cwd": "${workspaceFolder}/apps/gtk.lifecycle",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -42,16 +42,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "std/stdlib.malloc"
+            "preLaunchTask": "apps/gtk.lifecycle"
         },
         {
-            "name": "std/stdlib.qsort",
+            "name": "apps/json-c.lifecycle",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/std/stdlib.qsort/main.app",
+            "program": "${workspaceFolder}/apps/json-c.lifecycle/json-c.lifecycle.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/std/stdlib.qsort",
+            "cwd": "${workspaceFolder}/apps/json-c.lifecycle",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -62,16 +62,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "std/stdlib.qsort"
+            "preLaunchTask": "apps/json-c.lifecycle"
         },
         {
-            "name": "thread/lifecycle",
+            "name": "apps/std.assert",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread/lifecycle/main.app",
+            "program": "${workspaceFolder}/apps/std.assert/std.assert.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/lifecycle",
+            "cwd": "${workspaceFolder}/apps/std.assert",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -82,16 +82,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "thread/lifecycle"
+            "preLaunchTask": "apps/std.assert"
         },
         {
-            "name": "thread/multithread",
+            "name": "apps/std.stdlib",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread/multithread/main.app",
+            "program": "${workspaceFolder}/apps/std.stdlib/std.assert.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/multithread",
+            "cwd": "${workspaceFolder}/apps/std.stdlib",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -102,16 +102,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "thread/multithread"
+            "preLaunchTask": "apps/std.stdlib"
         },
         {
-            "name": "thread/producer",
+            "name": "apps/thread.lifecycle",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread/producer/main.app",
+            "program": "${workspaceFolder}/apps/thread.lifecycle/std.stdlib.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/producer",
+            "cwd": "${workspaceFolder}/apps/thread.lifecycle",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -122,16 +122,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "thread/producer"
+            "preLaunchTask": "apps/thread.lifecycle"
         },
         {
-            "name": "thread/threadpool",
+            "name": "apps/thread.multithread",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/thread/threadpool/main.app",
+            "program": "${workspaceFolder}/apps/thread.multithread/thread.lifecycle.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/thread/threadpool",
+            "cwd": "${workspaceFolder}/apps/thread.multithread",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -142,16 +142,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "thread/threadpool"
+            "preLaunchTask": "apps/thread.multithread"
         },
         {
-            "name": "json-c/lifecycle",
+            "name": "apps/thread.producer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/json-c/lifecycle/main.app",
+            "program": "${workspaceFolder}/apps/thread.producer/thread.multithread.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/json-c/lifecycle",
+            "cwd": "${workspaceFolder}/apps/thread.producer",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -162,16 +162,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "json-c/lifecycle"
+            "preLaunchTask": "apps/thread.producer"
         },
         {
-            "name": "algorithm/001",
+            "name": "apps/thread.threadpool",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/algorithm/001/main.app",
+            "program": "${workspaceFolder}/apps/thread.threadpool/thread.producer.app",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/algorithm/001",
+            "cwd": "${workspaceFolder}/apps/thread.threadpool",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
@@ -182,67 +182,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "algorithm/001"
-        },
-        {
-            "name": "algorithm/002",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/algorithm/002/main.app",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/algorithm/002",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "algorithm/002"
-        },
-        {
-            "name": "framebuffer/001",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/framebuffer/001/main.app",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/framebuffer/001",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "framebuffer/001"
-        },
-        {
-            "name": "gtk/lifecycle",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/gtk/lifecycle/main.app",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/gtk/lifecycle",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "gtk/lifecycle"
+            "preLaunchTask": "apps/thread.threadpool"
         }
     ]
 }
