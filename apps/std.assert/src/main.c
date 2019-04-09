@@ -22,7 +22,7 @@
 
 /**
  * 运行时判定表达式是否正确，如果不正确直接退出
-*/
+ */
 int test_assert() {
     assert(1.0 > 0.0);
     assert(1);
@@ -34,8 +34,7 @@ int test_assert() {
 
 /**
  * 编译时判定表达式是否正确
- * 
-*/
+ */
 int test_static_assert() {
     static_assert(1.0 > 0.0, "1.0 <= 0.0");
     static_assert(1 + 2 == 3, "1 + 2 <> 3");
