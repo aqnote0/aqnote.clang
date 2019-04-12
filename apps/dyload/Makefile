@@ -61,9 +61,10 @@ DEBUG: CFLAGS += -O0 -D_DEBUG -Wall -g -D_DEBUG=1
 DEBUG: $(MODULE_OUTPUT)
 
 $(MODULE_NAME).app: $(OBJECTS)
+	${MAKE} -C depends/so1 all
+	${MAKE} -C depends/so2 all
 	@mkdir -p bin
-	g++ -o $@ $(OBJECTS) $(LDFLAGS)
-	@mv $@ bin
+	g++ -o bin/$@ $(OBJECTS) $(LDFLAGS)
 
 ## compile .cpp file
 $(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp

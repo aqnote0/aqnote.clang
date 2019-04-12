@@ -4,67 +4,11 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "std/stdlib.sizeof",
+            "label": "apps/framebuffer",
             "type": "shell",
             "command": "make",
             "options": {
-                "cwd": "std/stdlib.sizeof",
-                "env": {},
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "std/stdlib.malloc",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "std/stdlib.malloc",
-                "env": {},
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "std/stdlib.qsort",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "std/stdlib.qsort",
-                "env": {},
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "thread/lifecycle",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "thread/lifecycle",
-                "env": {},
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "thread/multithread",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "thread/multithread",
+                "cwd": "apps/framebuffer",
                 "env": {
                     "DEBUG": 1
                 },
@@ -76,110 +20,120 @@
             }
         },
         {
-            "label": "thread/producer",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "thread/producer",
-                "env": {
-                    "DEBUG": 1
-                },
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "thread/threadpool",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "thread/threadpool",
-                "env": {
-                    "DEBUG": 1
-                },
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "json-c/lifecycle",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "json-c/lifecycle",
-                "env": {
-                    "DEBUG": 1
-                },
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "algorithm/001",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "algorithm/001",
-                "env": {
-                    "DEBUG": 1
-                },
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "algorithm/002",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "algorithm/002",
-                "env": {
-                    "DEBUG": 1
-                },
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "framebuffer/001",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "framebuffer/001",
-                "env": {
-                    "DEBUG": 1
-                },
-                "shell": {}
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "gtk/lifecycle",
+            "label": "apps/gtk.lifecycle",
             "type": "shell",
             "command": "make",
             "args": [],
             "options": {
-                "cwd": "gtk/lifecycle",
+                "cwd": "apps/gtk.lifecycle",
                 "env": {
                     "DEBUG": "1"
+                },
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "apps/json-c.lifecycle",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "apps/json-c.lifecycle",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "apps/std.assert",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "apps/std.assert",
+                "env": {},
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "apps/std.stdlib",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "apps/std.stdlib",
+                "env": {},
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "apps/thread.lifecycle",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "apps/thread.lifecycle",
+                "env": {},
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "apps/thread.multithread",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "apps/thread.multithread",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "apps/thread.producer",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "apps/thread.producer",
+                "env": {
+                    "DEBUG": 1
+                },
+                "shell": {}
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "apps/thread.threadpool",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "apps/thread.threadpool",
+                "env": {
+                    "DEBUG": 1
                 },
                 "shell": {}
             },
