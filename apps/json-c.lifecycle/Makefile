@@ -16,7 +16,7 @@ MODULE_INTRODUCE 	=
 ## 在环境变量中添加 `export LD_LIBRARY_PATH=/opt/aqnote/lib`，这样才能运行
 MODULE_DEPENDS_PROJ 		=
 MODULE_DEPENDS_PKG			=
-MODULE_DEPENDS_NONSTD_PATH 	= /opt/aqnote
+MODULE_DEPENDS_NONSTD_PATH 	= /opt/aqnote/json-c
 MODULE_DEPENDS_NONSTD_FILE	= json-c
 
 # Compile
