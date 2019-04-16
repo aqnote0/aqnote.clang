@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char** argv) {
-    printf("http://aqnote.com\n");
+int main( int argc, char** argv ) {
+    printf( "http://aqnote.com\n" );
     return EXIT_SUCCESS;
 }
