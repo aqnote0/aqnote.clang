@@ -66,6 +66,8 @@ endif
 LDFLAGS += $(foreach lib, $(MODULE_DEPENDS_NONSTD_FILE), -l$(lib))
 
 ### add pkg-config
+export PKG_CONFIG_PATH=${MODULE_DEPENDS_PKG_CONFIG}
+
 ifneq "" "$(MODULE_DEPENDS_PKG)"
 	CFLAGS += $(foreach config, $(MODULE_DEPENDS_PKG), $(shell pkg-config --cflags $(config))) 
 	LDFLAGS += $(foreach config, $(MODULE_DEPENDS_PKG), $(shell pkg-config --libs $(config)))

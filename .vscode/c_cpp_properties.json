@@ -4,6 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
+                "/opt/aqnote/ffmpeg/include",
                 "/opt/aqnote/opencv/include",
                 "/usr/include",
                 "/usr/include/x86_64-linux-gnu",
@@ -15,7 +16,8 @@
                 "/usr/include/gtk-2.0",
                 "/usr/include/gtk-3.0",
                 "/usr/lib/x86_64-linux-gnu/glib-2.0/include",
-                "/usr/lib/x86_64-linux-gnu/gtk-2.0/include"
+                "/usr/lib/x86_64-linux-gnu/gtk-2.0/include",
+                "/usr/include/gstreamer-1.0"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
