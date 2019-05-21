@@ -12,10 +12,8 @@ MODULE_NAME 		= algorithm.test
 MODULE_INTRODUCE 	=
 
 # Depends
-MODULE_DEPENDS_PROJ 		= aqalgorithm
-MODULE_DEPENDS_PKG			=
-MODULE_DEPENDS_NONSTD_PATH 	=
-MODULE_DEPENDS_NONSTD_FILE	=
+## Depend Module 
+MODULE_DEPENDS_PROJ 		= aqnote_algorithm
 
 # Compile
 MODULE_COMPILER 	= c

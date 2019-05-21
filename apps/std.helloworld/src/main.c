@@ -3,8 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-int main(int argc, char **argv)
-{
-    printf("Hello World.\n");
+int main(int argc, char **argv) {
+    printf("Hello World\n");
     return EXIT_SUCCESS;
 }

@@ -9,16 +9,31 @@
 
 # Constant
 MODULE_NAME 		= aqnote
-MODULE_INTRODUCE 	=
+MODULE_INTRODUCE 	= 模块DEMO
 
 # Depends
-MODULE_DEPENDS_PROJ 		= 
-MODULE_DEPENDS_PKG			=
-MODULE_DEPENDS_NONSTD_PATH 	=
-MODULE_DEPENDS_NONSTD_FILE	=
+## Depend Module 
+MODULE_DEPENDS_PROJ 		=
+
+## Depend Path
+MODULE_DEPENDS_NONSTD_LIST  = OPENCV FFMPEG
+DEPEND_OPENCV_HOME 			= /opt/aqnote/opencv
+DEPEND_OPENCV_LIB			= opencv_core opencv_imgproc opencv_imgcodecs opencv_highgui
+
+DEPEND_FFMPEG_HOME 			= /opt/aqnote/ffmpeg
+DEPEND_FFMPEG_LIB			= avutil avformat avcodec swscale
+DEPEND_FFMPEG_STATIC 		= 1
+
+## Depend PKG-CONFIG
+# MODULE_DEPENDS_PKG_CONFIG   = /opt/aqnote/opencv/lib/pkgconfig
+# MODULE_DEPENDS_PKG			= opencv
+
+## Depend System
+MODULE_DEPENDS_STD_LIST 	= pthread
+
 
 # Compile
-MODULE_COMPILER 	= c
+MODULE_COMPILER 	= cpp
 # MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 

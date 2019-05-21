@@ -14,17 +14,20 @@ export PROJECT_APPS_HOME 		= ${PROJECT_HOME}/apps
 export PROJECT_DOCS_HOME 		= ${PROJECT_HOME}/docs
 export PROJECT_MODULES_HOME 	= ${PROJECT_HOME}/modules
 
-modules = apps/aqnote									\
-	apps/helloworld										\
-	modules/aqalgorithm apps/algorithm.test				\
+modules = apps/aqnote	\
+						\
+	apps/std.helloworld	\
+	apps/std.assert		\
+	apps/std.stdlib		\
+								\
+	modules/aqnote_alogirhtm	\
+	apps/algorithm.test			\
 	apps/dyload 										\
 	apps/framebuffer 									\
 	apps/gtk.lifecycle 									\
 	apps/json-c.lifecycle 								\
 	apps/kernel.mmap									\
 	modules/moduleA modules/moduleB apps/multimodule 	\
-	apps/std.assert										\
-	apps/std.stdlib 									\
 	apps/thread.lifecycle 								\
 	apps/thread.multithread 							\
 	apps/thread.producer 								\

@@ -3,8 +3,8 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include "aqnote_sort.h"
-#include "aqnote_linked_list.h"
+#include "aqnote/algorithm/sort.h"
+#include "aqnote/algorithm/linked_list.h"
 
 /*
  * function: test qsort function
