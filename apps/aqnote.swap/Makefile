@@ -8,8 +8,8 @@
 #
 
 # Constant
-MODULE_NAME 		= aqnote
-MODULE_INTRODUCE 	= 模块DEMO
+MODULE_NAME 		= aqnote.swap
+MODULE_INTRODUCE 	= swap函数的几种实现
 
 # Depends
 ## Depend Module 
@@ -30,6 +30,7 @@ DEPEND_FFMPEG_STATIC 		= 1
 
 ## Depend System
 MODULE_DEPENDS_STD_LIST 	= pthread
+
 
 # Compile
 MODULE_COMPILER 	= cpp

@@ -16,76 +16,44 @@
  * =====================================================================================
  */
 #include <stdio.h>
-#include "aqnote.h"
+#include <math.h>
+
+int  index = 0;
+void recurse() {
+    printf("%d, %d\n", index, index);
+    if (index == 1000000)
+        return;
+    index++;
+    recurse();
+}
+
+int  index_branch2 = 0;
+void recurse_branch2() {
+    printf("%d, %d, %d\n", index_branch2, (int)powl(index_branch2, 1.0 / 2),
+           (int)sqrt(index_branch2));
+    if (index_branch2 == 1000000)
+        return;
+    index_branch2++;
+    recurse_branch2();
+    recurse_branch2();
+}
+
+int  index_branch3 = 0;
+void recurse_branch3() {
+    printf("%d, %d, %d\n", index_branch3, (int)powl(index_branch3, 1.0 / 3),
+           (int)cbrt(index_branch3));
+    if (index_branch3 == 1000000)
+        return;
+    index_branch3++;
+    recurse_branch3();
+    recurse_branch3();
+}
 
 int main(int argc, char **argv) {
 
-    printf("################\n");
-    {
-        int a = 1, b = 2;
-
-        printf("## 1\n");
-        printf("before a (%p, %d), b (%p, %d)\n", (void *)&a, a, (void *)&b, b);
-        swap(&a, &b);
-        printf("after a (%p, %d), b (%p, %d)\n", (void *)&a, a, (void *)&b, b);
-
-        a = 1, b = 2;
-        printf("## 2\n");
-        printf("before a (%p, %d), b (%p, %d)\n", (void *)&a, a, (void *)&b, b);
-        int *pa = &a;
-        int *pb = &b;
-        swap(pa, pb);
-        printf("after a (%p, %d), b (%p, %d)\n", (void *)&a, a, (void *)&b, b);
-
-        a = 1, b = 2;
-        printf("## 3\n");
-        printf("before a (%p, %d), b (%p, %d)\n", (void *)&a, a, (void *)&b, b);
-        int *pa_1 = &a;
-        int *pb_1 = &b;
-        swap1(pa_1, pb_1);
-        printf("after a (%p, %d), b (%p, %d)\n", (void *)&a, a, (void *)&b, b);
-    }
-
-    printf("################\n");
-    {
-        int result;
-        int code = is_leap_year(2017, &result);
-        if (code == 0) {
-            if (result == 1) {
-                printf("闰年\n");
-            } else {
-                printf("不是闰年\n");
-            }
-        } else {
-            printf("error.\n");
-        }
-    }
-
-    printf("################\n");
-    {
-        int year, week, day;
-
-        int noday = 500;
-        int code  = day_to_date(noday, &year, &week, &day);
-        if (code == 0) {
-            printf("day: %d -> year: %d, week: %d, day: %d\n", noday, year,
-                   week, day);
-        } else {
-            printf("error.\n");
-        }
-    }
-
-    printf("################\n");
-    {
-        int result;
-        int code = max(2, 1, 3, &result);
-        if (code == 0) {
-            printf("max is %d\n", result);
-        } else {
-            printf("error.\n");
-        }
-    }
+    // recurse();
+    // recurse_branch2();
+    recurse_branch3();
 
     return 0;
 }
-
