@@ -12,9 +12,9 @@ MODULE_NAME 		= std.stdio
 MODULE_INTRODUCE 	= 输入输出标准库测试例子
 
 # Compile
-MODULE_COMPILER 	= c
+MODULE_LINK 	= c
 # MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../constant.makefile
-include ${PROJECT_HOME}/global.makefile
+include ../../makefile.d/config.makefile
+include ${PROJECT_MAKEFILE_HOME}/global.makefile

@@ -12,9 +12,9 @@ MODULE_NAME 		= std.hellowrold
 MODULE_INTRODUCE 	= C语言第一个程序
 
 # Compile
-MODULE_COMPILER 	= c
+MODULE_LINK 	= c
 MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../constant.makefile
-include ${PROJECT_HOME}/global.makefile
+include ../../makefile.d/config.makefile
+include ${PROJECT_MAKEFILE_HOME}/global.makefile

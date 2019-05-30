@@ -13,13 +13,13 @@ MODULE_BUILD = DEBUG
 MODULE_OUTPUT = main.app
 
 # Depends
-MODULE_DEPENDS_PROJ 		=
-MODULE_DEPENDS_PKG			=
+DEPEND_MODULE 		=
+DEPEND_PKG			=
 MODULE_DEPENDS_NONSTD_PATH 	=
 MODULE_DEPENDS_NONSTD_FILE	=
 
 assembly:
 	$(CPP) $(CFLAGS) $(C_SOURCES) -S
 
-include ../../constant.makefile
-include ${PROJECT_HOME}/global.makefile
+include ../../makefile.d/config.makefile
+include ${PROJECT_MAKEFILE_HOME}/global.makefile

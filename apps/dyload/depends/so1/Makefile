@@ -1,7 +1,7 @@
-INC_DIR := include
-SRC_DIR := src
+INCLUDE_DIR := include
+SOURCE_DIR := src
 BUILD_DIR := build
-BIN_DIR := bin
+BINARY_DIR := bin
 
 .PHONY: all
 all: libso1.so
@@ -11,10 +11,10 @@ libso1.so: $(BUILD_DIR)/so1.o
 	@mkdir -p lib
 	@mv $@ lib
 
-$(BUILD_DIR)/so1.o: $(SRC_DIR)/so1.cpp $(SRC_DIR)/so1.hpp
+$(BUILD_DIR)/so1.o: $(SOURCE_DIR)/so1.cpp $(SOURCE_DIR)/so1.hpp
 	@mkdir -p $(BUILD_DIR)
 	g++ -o $@ -c $< -fPIC
 
 .PHONY:clean
 clean:
-	@rm -rf $(BUILD_DIR) $(BIN_DIR)
+	@rm -rf $(BUILD_DIR) $(BINARY_DIR)

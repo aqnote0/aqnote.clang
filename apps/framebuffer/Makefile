@@ -12,9 +12,9 @@ MODULE_NAME 		= framebuffer
 MODULE_INTRODUCE 	=
 
 # Compile
-MODULE_COMPILER 	=
+MODULE_LINK 	=
 MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../constant.makefile
-include ${PROJECT_HOME}/global.makefile
+include ../../makefile.d/config.makefile
+include ${PROJECT_MAKEFILE_HOME}/global.makefile

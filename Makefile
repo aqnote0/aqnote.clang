@@ -13,6 +13,8 @@ export PROJECT_BUILD_HOME 		= ${PROJECT_HOME}/build
 export PROJECT_APPS_HOME 		= ${PROJECT_HOME}/apps
 export PROJECT_DOCS_HOME 		= ${PROJECT_HOME}/docs
 export PROJECT_MODULES_HOME 	= ${PROJECT_HOME}/modules
+export PROJECT_3RDPARTY_HOME	= ${PROJECT_HOME}/3rdparty
+export PROJECT_MAKEFILE_HOME	= ${PROJECT_HOME}/makefile.d
 
 modules = apps/aqnote	\
 						\
@@ -20,7 +22,7 @@ modules = apps/aqnote	\
 	apps/std.assert		\
 	apps/std.stdlib		\
 								\
-	modules/aqnote_alogirhtm	\
+	modules/aqnote_algorithm	\
 	apps/algorithm.test			\
 	apps/dyload 										\
 	apps/framebuffer 									\

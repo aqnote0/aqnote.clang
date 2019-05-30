@@ -18,6 +18,8 @@
 #include <stdio.h>
 #include <math.h>
 
+// #pragma GCC diagnostic push
+// #pragma GCC diagnositic ignored "-W"
 int  index = 0;
 void recurse() {
     printf("%d, %d\n", index, index);
@@ -26,6 +28,7 @@ void recurse() {
     index++;
     recurse();
 }
+// #pragma GCC diagnostic pop
 
 int  index_branch2 = 0;
 void recurse_branch2() {
@@ -52,8 +55,8 @@ void recurse_branch3() {
 int main(int argc, char **argv) {
 
     // recurse();
-    // recurse_branch2();
-    recurse_branch3();
+    // recurse_branch2(); // 174664, 417, 417
+    recurse_branch3(); // 131024, 50, 50
 
     return 0;
 }

@@ -12,15 +12,15 @@ MODULE_NAME 		= gst.0x02
 MODULE_INTRODUCE 	=
 
 # Depends
-MODULE_DEPENDS_PROJ 		= 
-MODULE_DEPENDS_PKG			= gstreamer-1.0
+DEPEND_MODULE 		= 
+DEPEND_PKG			= gstreamer-1.0
 MODULE_DEPENDS_NONSTD_PATH 	=
 MODULE_DEPENDS_NONSTD_FILE	=
 
 # Compile
-MODULE_COMPILER 	= c
+MODULE_LINK 	= c
 # MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../constant.makefile
-include ${PROJECT_HOME}/global.makefile
+include ../../makefile.d/config.makefile
+include ${PROJECT_MAKEFILE_HOME}/global.makefile
