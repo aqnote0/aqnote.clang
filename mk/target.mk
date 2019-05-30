@@ -13,8 +13,19 @@ AQNOTE_MODULE_NAME 		= ${MODULE_NAME}
 AQNOTE_MODULE_DEPS 		= ${MODULE_DEPS}
 AQNOTE_MODULE_BUILD		= ${MODULE_BUILD}
 AQNOTE_MODULE_OUTPUT	= ${MODULE_OUTPUT}
-AQNOTE_DEP_MODULES		= $(foreach module, $(DEPEND_MODULE_LIST), $(DEPEND_MODULE_$(module)_HOME))
-AQNOTE_DEP_THIRDS		= $(foreach module, $(DEPEND_THIRD_LIST), $(DEPEND_THIRD_$(module)_HOME))
+# AQNOTE_DEP_MODULES		= $(foreach module, $(DEPEND_MODULE_LIST), $(DEPEND_MODULE_$(module)_HOME))
+# AQNOTE_DEP_THIRDS		= $(foreach module, $(DEPEND_THIRD_LIST), $(DEPEND_THIRD_$(module)_HOME))
+
+AQNOTE_DEP_MODULES		= $(foreach module, $(DEPEND_MODULE_LIST), \
+							$(if $(DEPEND_MODULE_$(module)_STATIC), \
+								, $(DEPEND_MODULE_$(module)_HOME) \
+							) 	\
+						)
+AQNOTE_DEP_THIRDS		= $(foreach module, $(DEPEND_THIRD_LIST), \
+							$(if $(DEPEND_THIRD_$(module)_STATIC), \
+								, $(DEPEND_THIRD_$(module)_HOME) \
+							) 	\
+						)
 
 ###############################
 ## TARGET
@@ -74,10 +85,10 @@ clean:
 dist:
 	@mkdir -p ${DIST_DIR}/lib
 	@for module in $(AQNOTE_DEP_MODULES); do \
-		cp -rf $$module/lib/* ${DIST_DIR}/lib; \
+		cp -rf $$module/lib/*.so ${DIST_DIR}/lib; \
 	done
 	@for module in $(AQNOTE_DEP_THIRDS); do \
-		cp -rf $$module/lib/* ${DIST_DIR}/lib; \
+		cp -rf $$module/lib/*.so ${DIST_DIR}/lib; \
 	done
 	@if [ "${AQNOTE_MODULE_OUTPUT}" = "${AQNOTE_MODULE_NAME}.app" ]; \
 	then \
