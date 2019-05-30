@@ -14,7 +14,7 @@ MODULE_INTRODUCE 	= C语言第一个程序
 # Compile
 MODULE_LINK 	= c
 MODULE_BUILD 		= DEBUG
-MODULE_OUTPUT 		= $(MODULE_NAME).app
+MODULE_TARGET 		= $(MODULE_NAME).app
 
 include ../../mk/config.mk
 include ${PROJECT_MAKEFILE_HOME}/global.mk

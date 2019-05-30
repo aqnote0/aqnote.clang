@@ -26,7 +26,7 @@ DEPEND_PKG			=
 # Compile
 MODULE_LINK 		= cpp
 # MODULE_BUILD 		= DEBUG
-MODULE_OUTPUT 		= $(MODULE_NAME).app
+MODULE_TARGET 		= $(MODULE_NAME).app
 
 
 include ${PROJECT_MAKEFILE_HOME}/global.mk

@@ -10,7 +10,7 @@ MODULE_NAME = gcc.assembly
 MODULE_INTRODUCE =
 MODULE_BUILD = DEBUG
 
-MODULE_OUTPUT = main.app
+MODULE_TARGET = main.app
 
 # Depends
 DEPEND_MODULE_LIST 		=

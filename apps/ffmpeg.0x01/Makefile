@@ -20,7 +20,7 @@ DEPEND_PKG			= libavutil libavdevice libavformat libavcodec libavfilter libswsca
 # Compile
 MODULE_LINK 	= c
 # MODULE_BUILD 		= DEBUG
-MODULE_OUTPUT 		= $(MODULE_NAME).app
+MODULE_TARGET 		= $(MODULE_NAME).app
 
 include ../../mk/config.mk
 include ${PROJECT_MAKEFILE_HOME}/global.mk
