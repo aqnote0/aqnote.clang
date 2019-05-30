@@ -13,7 +13,7 @@ MODULE_INTRODUCE 	= swap函数的几种实现
 
 # Depends
 ## Depend Module 
-DEPEND_MODULE 		=
+DEPEND_MODULE_LIST 		=
 
 ## Depend Path
 DEPEND_NONSTD  			= OPENCV FFMPEG
@@ -37,5 +37,5 @@ MODULE_LINK 	= cpp
 # MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../makefile.d/config.makefile
-include ${PROJECT_MAKEFILE_HOME}/global.makefile
+include ../../mk/config.mk
+include ${PROJECT_MAKEFILE_HOME}/global.mk

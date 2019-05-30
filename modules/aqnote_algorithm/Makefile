@@ -16,5 +16,5 @@ MODULE_LINK 		= c
 MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= lib$(MODULE_NAME).a lib$(MODULE_NAME).so
 
-include ../../makefile.d/config.makefile
-include ${PROJECT_MAKEFILE_HOME}/global.makefile
+include ../../mk/config.mk
+include ${PROJECT_MAKEFILE_HOME}/global.mk

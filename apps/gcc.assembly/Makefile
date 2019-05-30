@@ -13,12 +13,12 @@ MODULE_BUILD = DEBUG
 MODULE_OUTPUT = main.app
 
 # Depends
-DEPEND_MODULE 		=
+DEPEND_MODULE_LIST 		=
 DEPEND_NONSTD 		=
 DEPEND_PKG			=
 
 assembly:
 	$(CPP) $(CFLAGS) $(C_SOURCES) -S
 
-include ../../makefile.d/config.makefile
-include ${PROJECT_MAKEFILE_HOME}/global.makefile
+include ../../mk/config.mk
+include ${PROJECT_MAKEFILE_HOME}/global.mk

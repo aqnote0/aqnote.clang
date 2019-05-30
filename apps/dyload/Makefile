@@ -13,7 +13,7 @@ MODULE_INTRODUCE 	=
 
 # Depends
 ## Depend Module 
-DEPEND_MODULE 		=
+DEPEND_MODULE_LIST 		=
 
 ## Depend Path
 DEPEND_NONSTD  		= SO1 SO2
@@ -32,5 +32,5 @@ MODULE_LINK 		= cpp
 # MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../makefile.d/config.makefile
-include ${PROJECT_MAKEFILE_HOME}/global.makefile
+include ../../mk/config.mk
+include ${PROJECT_MAKEFILE_HOME}/global.mk

@@ -12,7 +12,7 @@ MODULE_NAME 		= thread.lifecycle
 MODULE_INTRODUCE 	= 线程生命周期
 
 # Depends
-DEPEND_MODULE 		=
+DEPEND_MODULE_LIST 		=
 DEPEND_NONSTD 		=
 DEPEND_PKG			=
 DEPEND_STD			= pthread
@@ -22,5 +22,5 @@ MODULE_LINK 	=
 MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../makefile.d/config.makefile
-include ${PROJECT_MAKEFILE_HOME}/global.makefile
+include ../../mk/config.mk
+include ${PROJECT_MAKEFILE_HOME}/global.mk

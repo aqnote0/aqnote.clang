@@ -7,7 +7,7 @@
 #
 #
 
-include ../../makefile.d/config.makefile
+include ../../mk/config.mk
 
 # Constant
 MODULE_NAME 		= aqnote
@@ -15,7 +15,7 @@ MODULE_INTRODUCE 	= 模块DEMO
 
 # Depends
 ## Depend Module 
-DEPEND_MODULE 		=
+DEPEND_MODULE_LIST 		=
 
 ## Depend Path
 DEPEND_NONSTD  				= OPENCV FFMPEG
@@ -39,4 +39,4 @@ MODULE_LINK 		= c
 MODULE_TOOLCHAIN	= x86_64-linux-gnu
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ${PROJECT_MAKEFILE_HOME}/global.makefile
+include ${PROJECT_MAKEFILE_HOME}/global.mk

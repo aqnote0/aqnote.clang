@@ -5,6 +5,8 @@ BUILD_BIN=$(BUILD_HOME)/bin
 BUILD_LIB=$(BUILD_HOME)/lib
 DIST_HOME=$(MODULE_HOME)/dist
 
+all: main.app
+
 main.app: main.o libfoo.so
 	@mkdir -p ${BUILD_BIN}
 	@cd ${BUILD_HOME}; \

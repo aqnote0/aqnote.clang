@@ -12,7 +12,7 @@ MODULE_NAME 		= std.assert
 MODULE_INTRODUCE 	=
 
 # Depends
-DEPEND_MODULE 		=
+DEPEND_MODULE_LIST 		=
 DEPEND_PKG			=
 DEPEND_NONSTD 	=
 	=
@@ -22,5 +22,5 @@ MODULE_LINK 	=
 MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../makefile.d/config.makefile
-include ${PROJECT_MAKEFILE_HOME}/global.makefile
+include ../../mk/config.mk
+include ${PROJECT_MAKEFILE_HOME}/global.mk

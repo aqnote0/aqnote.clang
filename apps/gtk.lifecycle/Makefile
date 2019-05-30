@@ -12,7 +12,7 @@ MODULE_NAME 		= gtk.lifecycle
 MODULE_INTRODUCE 	=
 
 # Depends
-DEPEND_MODULE 		=
+DEPEND_MODULE_LIST 		=
 DEPEND_NONSTD 		=
 DEPEND_PKG			= gtk+-2.0 gtk+-3.0
 
@@ -21,5 +21,5 @@ MODULE_LINK 		= c
 MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../makefile.d/config.makefile
-include ${PROJECT_MAKEFILE_HOME}/global.makefile
+include ../../mk/config.mk
+include ${PROJECT_MAKEFILE_HOME}/global.mk
