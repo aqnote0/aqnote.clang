@@ -90,8 +90,7 @@ dist:
 	@for module in $(AQNOTE_DEP_THIRDS); do \
 		cp -rf $$module/lib/*.so ${DIST_DIR}/lib; \
 	done
-	@if [ "${AQNOTE_MODULE_TARGET}" = "${AQNOTE_MODULE_NAME}.app" ]; \
-	then \
+	@if [ "${AQNOTE_MODULE_TARGET}" = "${AQNOTE_MODULE_NAME}.app" ]; then \
 		cp -rf ${BINARY_DIR} ${DIST_DIR}; \
 	else \
 		cp -rf ${LIBRARY_DIR} ${DIST_DIR}/lib; \
