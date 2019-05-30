@@ -16,7 +16,7 @@ MODULE_INTRODUCE 	=
 DEPEND_MODULE 		=
 
 ## Depend Path
-DEPEND_NONSTD  = SO1 SO2
+DEPEND_NONSTD  		= SO1 SO2
 DEPEND_SO1_HOME 	= ./depends/so1
 DEPEND_SO1_LIB		= so1
 DEPEND_SO2_HOME 	= ./depends/so2
@@ -28,7 +28,7 @@ DEPEND_STD 	= pthread
 LDFLAGS += -ldl -Wl,-rpath=depends/so1/lib -Wl,-rpath=depends/so2/lib
 
 # Compile
-MODULE_LINK 	= cpp
+MODULE_LINK 		= cpp
 # MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= $(MODULE_NAME).app
 

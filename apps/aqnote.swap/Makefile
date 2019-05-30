@@ -16,13 +16,13 @@ MODULE_INTRODUCE 	= swap函数的几种实现
 DEPEND_MODULE 		=
 
 ## Depend Path
-DEPEND_NONSTD  = OPENCV FFMPEG
-DEPEND_OPENCV_HOME 			= /opt/aqnote/opencv
-DEPEND_OPENCV_LIB			= opencv_core opencv_imgproc opencv_imgcodecs opencv_highgui
+DEPEND_NONSTD  			= OPENCV FFMPEG
+DEPEND_OPENCV_HOME 		= /opt/aqnote/opencv
+DEPEND_OPENCV_LIB		= opencv_core opencv_imgproc opencv_imgcodecs opencv_highgui
 
-DEPEND_FFMPEG_HOME 			= /opt/aqnote/ffmpeg
-DEPEND_FFMPEG_LIB			= avutil avformat avcodec swscale
-DEPEND_FFMPEG_STATIC 		= 1
+DEPEND_FFMPEG_HOME 		= /opt/aqnote/ffmpeg
+DEPEND_FFMPEG_LIB		= avutil avformat avcodec swscale
+DEPEND_FFMPEG_STATIC 	= 1
 
 ## Depend PKG-CONFIG
 # DEPEND_PKG_CONFIG   = /opt/aqnote/opencv/lib/pkgconfig

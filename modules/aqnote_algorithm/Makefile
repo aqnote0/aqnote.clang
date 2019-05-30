@@ -12,7 +12,7 @@ MODULE_NAME 		= aqnote_algorithm
 MODULE_INTRODUCE 	= aqnote的算法模块，包含基本算法
 
 # Compile
-MODULE_LINK 	= c
+MODULE_LINK 		= c
 MODULE_BUILD 		= DEBUG
 MODULE_OUTPUT 		= lib$(MODULE_NAME).a lib$(MODULE_NAME).so
 

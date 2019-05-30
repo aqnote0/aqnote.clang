@@ -3,7 +3,7 @@
  *
  *       Filename:  main.c
  *
- *    Description:
+ *    Description: 播放一个远程视频文件
  *
  *        Version:  1.0
  *        Created:  04/30/19 16:26:44
@@ -28,9 +28,7 @@ int main(int argc, char **argv) {
 
     /* Build the pipeline */
     pipeline = gst_parse_launch(
-        "playbin "
-        "uri=https://www.freedesktop.org/software/gstreamer-sdk/data/media/"
-        "sintel_trailer-480p.webm",
+        "playbin uri=https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm",
         NULL);
 
     /* Start playing */

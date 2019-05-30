@@ -13,10 +13,9 @@ MODULE_INTRODUCE 	= 调用ffmpeg拉取rtsp流
 
 # Depends
 DEPEND_MODULE 		= 
+DEPEND_NONSTD 	=
 DEPEND_PKG_CONFIG   = /opt/aqnote/ffmpeg/lib/pkgconfig
 DEPEND_PKG			= libavutil libavdevice libavformat libavcodec libavfilter libswscale libswresample
-MODULE_DEPENDS_NONSTD_PATH 	=
-MODULE_DEPENDS_NONSTD_FILE	=
 
 # Compile
 MODULE_LINK 	= c
