@@ -93,7 +93,8 @@ dist:
 	@if [ "${AQNOTE_MODULE_TARGET}" = "${AQNOTE_MODULE_NAME}.app" ]; then \
 		cp -rf ${BINARY_DIR} ${DIST_DIR}; \
 	else \
-		cp -rf ${LIBRARY_DIR} ${DIST_DIR}/lib; \
+		cp -rf ${LIBRARY_DIR} ${DIST_DIR}; \
+		cp -rf ${INCLUDE_DIR} ${DIST_DIR}; \
 	fi
 
 .PHONY: memcheck

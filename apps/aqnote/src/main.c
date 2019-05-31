@@ -17,6 +17,9 @@
  */
 #include <stdio.h>
 #include <math.h>
+#include "aqnote/a/a.h"
+#include "aqnote/b/b.h"
+
 
 // #pragma GCC diagnostic push
 // #pragma GCC diagnositic ignored "-W"
@@ -54,9 +57,13 @@ void recurse_branch3() {
 
 int main(int argc, char **argv) {
 
+    a_print();
+    int sum = b_add(1, 2);
+    printf("sum = %d\n", sum);
+
     // recurse();
     // recurse_branch2(); // 174664, 417, 417
-    recurse_branch3(); // 131024, 50, 50
+    // recurse_branch3(); // 131024, 50, 50
 
     return 0;
 }
