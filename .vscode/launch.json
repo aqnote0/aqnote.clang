@@ -8,12 +8,12 @@
             "name": "apps/framebuffer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/apps/framebuffer/framebuffer.app",
+            "program": "${workspaceFolder}/apps/framebuffer/bin/framebuffer.app",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/apps/framebuffer",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
                 {

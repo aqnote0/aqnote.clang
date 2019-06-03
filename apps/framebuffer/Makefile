@@ -7,14 +7,20 @@
 #
 #
 
-# Constant
+include ../../mk/config.mk
+
+###############################
+# Module Info
+###############################
 MODULE_NAME 		= framebuffer
 MODULE_INTRODUCE 	=
-
-# Compile
-MODULE_LINK 	=
-MODULE_BUILD 		= DEBUG
 MODULE_TARGET 		= $(MODULE_NAME).app
 
-include ../../mk/config.mk
+###############################
+# Compile Options
+###############################
+MODULE_BUILD 		= DEBUG
+MODULE_LINK 		= c
+MODULE_TOOLCHAIN	= x86_64-linux-gnu
+
 include ${PROJECT_MAKEFILE_HOME}/global.mk
