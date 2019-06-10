@@ -9,14 +9,18 @@
 
 include ../../mk/config.mk
 
-# Constant
+###############################
+# Module Info
+###############################
 MODULE_NAME 		= aqnote_b
 MODULE_INTRODUCE 	= aqnote b测试模块
-
-# Compile
-MODULE_LINK 		= c
-MODULE_BUILD 		= DEBUG
 MODULE_TARGET 		= lib$(MODULE_NAME).a lib$(MODULE_NAME).so
 
+###############################
+# Compile Options
+###############################
+MODULE_LINK 		= c
+MODULE_BUILD 		= DEBUG
+MODULE_TOOLCHAIN	= x86_64-linux-gnu
 
 include ${PROJECT_MAKEFILE_HOME}/global.mk

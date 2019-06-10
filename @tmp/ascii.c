@@ -4,11 +4,12 @@
 int main()
 {
   int i = 0;
-  while (i++ < 128)
+  while (i < 128)
   {
     if (i % 8 == 0)
       printf("\n");
     printf("%c ", i);
+    i++;
   }
 
   printf("\n");

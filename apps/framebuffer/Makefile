@@ -13,7 +13,7 @@ include ../../mk/config.mk
 # Module Info
 ###############################
 MODULE_NAME 		= framebuffer
-MODULE_INTRODUCE 	=
+MODULE_INTRODUCE 	= framebuffer使用例子
 MODULE_TARGET 		= $(MODULE_NAME).app
 
 ###############################

@@ -16,8 +16,8 @@
  * =====================================================================================
  */
 
-#ifndef _AQNOTE_LINKED_LIST_H
-#define _AQNOTE_LINKED_LIST_H
+#ifndef _AQNOTE_ALGORITHM_LINKED_LIST_H
+#define _AQNOTE_ALGORITHM_LINKED_LIST_H
 
 typedef struct _aqnote_linked_list {
     int                         key;

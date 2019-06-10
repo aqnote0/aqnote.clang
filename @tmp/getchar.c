@@ -1,15 +1,13 @@
 
 #include <stdio.h>
 
-int main()
-{
-  char ch;
-  printf("input a character\n");
-  ch=getchar();
+int main() {
+    char ch;
+    printf("input a character\n");
+    ch = getchar();
 
-  putchar(ch);
+    putchar(ch);
 
-  getchar();
-  return 0;
+    getchar();
+    return 0;
 }
-

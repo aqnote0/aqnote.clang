@@ -6,6 +6,7 @@
         "*.geojson": "json",
         "Makeconfig": "makefile",
         "*.txt": "automake",
+        "*.mak": "makefile",
         "string": "cpp",
         "pthread.h": "c",
         "aqnote_sort.h": "c",
@@ -13,7 +14,13 @@
         "stdlib.h": "c",
         "assert.h": "c",
         "stdio.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "ctype.h": "c",
+        "stddef.h": "c",
+        "stdint.h": "c",
+        "if.h": "c",
+        "if_link.h": "c",
+        "sort.h": "c"
     },
     "restructuredtext.confPath": ""
 }

@@ -17,7 +17,7 @@ export PROJECT_3RDPARTY_HOME	= ${PROJECT_HOME}/3rdparty
 export PROJECT_MAKEFILE_HOME	= ${PROJECT_HOME}/mk
 
 modules = \
-	modules/aqnote_a modules/aqnote_b apps/aqnote	\
+	modules/aqnote_a modules/aqnote_b apps/aqnote.template	\
 	apps/aqnote.origin \
 	modules/moduleA modules/moduleB apps/multimodule 	\
 	modules/aqnote_algorithm apps/algorithm.test \
