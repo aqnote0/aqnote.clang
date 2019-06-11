@@ -17,4 +17,6 @@
  */
 #include "aqnote/b/b.h"
 
-int b_add(char a, char b) { return a + b; }
+int b_add(char a, char b) {
+    return a + b;
+}

@@ -7,10 +7,10 @@
 ## Microsoft A style complying with [Microsoft's style guide](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017)
 
 # 基于那个配置文件
-BasedOnStyle: Google
+#BasedOnStyle: Google
 
 # 每行字符的限制，0表示没有限制
-ColumnLimit: 120
+#ColumnLimit: 120
 
 # 缩进宽度
 IndentWidth: 4

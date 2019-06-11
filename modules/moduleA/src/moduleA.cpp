@@ -1,4 +1,6 @@
 
 #include "../include/moduleA.hpp"
 
-string A::get() { return name; }
+string A::get() {
+    return name;
+}
