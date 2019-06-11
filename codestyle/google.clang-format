@@ -1,0 +1,212 @@
+---
+Language:        Cpp
+
+# 基于那个配置文件
+# BasedOnStyle:  Google
+
+# 访问说明符的偏移(public private)
+AccessModifierOffset: -1
+
+# 括号之后，水平对齐参数: Align DontAlign AlwaysBreak
+AlignAfterOpenBracket: Align
+
+# 连续的赋值时，对齐所有的等号
+AlignConsecutiveAssignments: false
+
+# 连续声明时，对齐所有声明的变量名
+AlignConsecutiveDeclarations: false
+
+# 左对齐换行(使用反斜杠换行)的反斜杠
+AlignEscapedNewlines: Left
+
+# 水平对齐二元和三元表达式的操作数
+AlignOperands:   true
+
+# 对齐连续的尾随的注释
+AlignTrailingComments: true
+
+# 允许函数声明的所有参数在放在下一行
+AllowAllParametersOfDeclarationOnNextLine: true
+
+# 允许短的块放在同一行
+AllowShortBlocksOnASingleLine: false
+
+# 允许短的case标签放在同一行
+AllowShortCaseLabelsOnASingleLine: false
+
+# 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
+AllowShortFunctionsOnASingleLine: All
+
+# 是否允许短 if 单行 If true, if (a) return; 可以放到同一行
+AllowShortIfStatementsOnASingleLine: true
+
+# 允许短的循环保持在同一行
+AllowShortLoopsOnASingleLine: true
+
+# 总是在定义返回类型后换行(deprecated)
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: true
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: true
+BinPackParameters: true
+BraceWrapping:   
+  AfterClass:      false
+  AfterControlStatement: false
+  AfterEnum:       false
+  AfterFunction:   false
+  AfterNamespace:  false
+  AfterObjCDeclaration: false
+  AfterStruct:     false
+  AfterUnion:      false
+  AfterExternBlock: false
+  BeforeCatch:     false
+  BeforeElse:      false
+  IndentBraces:    false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Attach
+BreakBeforeInheritanceComma: false
+BreakInheritanceList: BeforeColon
+BreakBeforeTernaryOperators: true
+
+# 在构造函数初始化时按逗号断行，并以冒号对齐
+BreakConstructorInitializersBeforeComma: false
+BreakConstructorInitializers: BeforeColon
+BreakAfterJavaFieldAnnotations: false
+BreakStringLiterals: true
+
+# 每行字符的限制，0表示没有限制
+ColumnLimit:     80
+
+# 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
+CommentPragmas:  '^ IWYU pragma:'
+CompactNamespaces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+DerivePointerAlignment: true
+DisableFormat:   false
+ExperimentalAutoDetectBinPacking: false
+FixNamespaceComments: true
+ForEachMacros:   
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+IncludeBlocks:   Preserve
+IncludeCategories: 
+  - Regex:           '^<ext/.*\.h>'
+    Priority:        2
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+  - Regex:           '^<.*'
+    Priority:        2
+  - Regex:           '.*'
+    Priority:        3
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+
+# 缩进 case 标签
+IndentCaseLabels: true
+IndentPPDirectives: None
+
+# 缩进宽度
+IndentWidth:     2
+
+# 缩进
+IndentWrappedFunctionNames: false
+JavaScriptQuotes: Leave
+JavaScriptWrapImports: true
+
+# 在block从空行开始
+KeepEmptyLinesAtTheStartOfBlocks: false
+MacroBlockBegin: ''
+MacroBlockEnd:   ''
+
+# 连续的空行保留几行
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+ObjCBinPackProtocolList: Never
+ObjCBlockIndentWidth: 2
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: true
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 200
+
+# 指针的*的挨着哪边
+PointerAlignment: Left
+RawStringFormats: 
+  - Language:        Cpp
+    Delimiters:      
+      - cc
+      - CC
+      - cpp
+      - Cpp
+      - CPP
+      - 'c++'
+      - 'C++'
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
+  - Language:        TextProto
+    Delimiters:      
+      - pb
+      - PB
+      - proto
+      - PROTO
+    EnclosingFunctions: 
+      - EqualsProto
+      - EquivToProto
+      - PARSE_PARTIAL_TEXT_PROTO
+      - PARSE_TEST_PROTO
+      - PARSE_TEXT_PROTO
+      - ParseTextOrDie
+      - ParseTextProtoOrDie
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
+ReflowComments:  true
+
+# 排序#include，设置为 false
+SortIncludes:    true
+SortUsingDeclarations: true
+
+# 括号后添加空格，设置为false
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: true
+
+# 等号两边的空格
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+SpacesInAngles:  false
+
+# 容器类的空格 例如 OC的字典
+SpacesInContainerLiterals: true
+SpacesInCStyleCastParentheses: false
+
+# 小括号两边添加空格 ()
+SpacesInParentheses: false
+
+# 中括号两边空格 []
+SpacesInSquareBrackets: false
+Standard:        Auto
+
+# tab 键盘的宽度，设置为4个字符大小
+TabWidth:        8
+
+# 使用Tab键，设置为不使用，即用空格替代
+UseTab:          Never
+...
+

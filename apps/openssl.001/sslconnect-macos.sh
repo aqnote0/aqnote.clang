@@ -1,7 +1,7 @@
 
 #!/usr/local/bin/bash
 
-OPENSSL_HOME=/usr/include/
+OPENSSL_HOME=/usr/local/Cellar/openssl/1.0.2n
 OPENSSL_INCLUDE=$OPENSSL_HOME/include
 OPENSSL_LIBRARY=$OPENSSL_HOME/lib
 CC=/usr/local/bin/gcc

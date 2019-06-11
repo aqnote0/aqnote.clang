@@ -3,7 +3,7 @@
  *
  *       Filename:  quick_sort.c
  *
- *    Description:  
+ *    Description:
  *
  *        Version:  1.0
  *        Created:  06/10/19 12:27:44
@@ -11,14 +11,13 @@
  *       Compiler:  gcc
  *
  *         Author:  "Peng Li"<aqnote@aqnote.com>
- *   Organization:  
+ *   Organization:
  *
  * =====================================================================================
  */
 #include "aqnote/algorithm/linked_list.h"
 
 #include <stdlib.h>
-
 
 void aqnote_sort_quick(int a[], int n) {
     int i;

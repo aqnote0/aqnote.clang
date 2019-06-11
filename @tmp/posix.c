@@ -3,15 +3,14 @@
 
 static char buffer[] = "foobar";
 
-int main (void)
-{
-    int ch;
+int main(void) {
+    int   ch;
     FILE *stream;
 
-    stream = fmemopen(buffer, strlen (buffer), "r");
+    stream = fmemopen(buffer, strlen(buffer), "r");
     if (stream == NULL)
-      ;
-        /* handle error */;
+        ;
+    /* handle error */;
 
     while ((ch = fgetc(stream)) != EOF)
         printf("Got %c\n", ch);
@@ -19,5 +18,3 @@ int main (void)
     fclose(stream);
     return (0);
 }
-
-
