@@ -72,17 +72,21 @@ int main() {
             // 是每幅图片的角点个数。此判断语句是为了输出图片号，便于控制台观看
             if (0 == jj % cornerNum) {
                 cout << "\n################" << endl;
-                cout << "第 " << ii << " 图片的数据: " << endl;
+                cout << "第 " << ii << " 张图片的数据: " << endl;
             }
             // 此判断语句，格式化输出，便于控制台查看
             if (0 == jj % 3) {
                 cout << endl;
             } else {
-                cout.width(25);
+                cout.width(30);
             }
             //输出所有的角点
-            cout << "(" << imagePointsSet[ii][jj].x << ", "
-                 << imagePointsSet[ii][jj].y << ")";
+			string point = "(";
+			point.append(to_string(imagePointsSet[ii][jj].x));
+			point.append(", ");
+			point.append(to_string(imagePointsSet[ii][jj].y));
+			point.append(")");
+            cout << point;
         }
     }
 
