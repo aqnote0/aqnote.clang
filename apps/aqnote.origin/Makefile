@@ -23,7 +23,7 @@ libfoo.so: lib/foo.c
 
 dist: main.app
 	@mkdir ${DIST_HOME}
-	cd ${BUILD_HOME}; \
+	@cd ${BUILD_HOME}; \
 	find . \( -name '*.git' -o -name '*.bak' -o -name "*.o" \) -prune -o -print | \
 		cpio -pu ${DIST_HOME}; \
 	cd -;

@@ -16,11 +16,10 @@
  * =====================================================================================
  */
 #include "aqnote/algorithm/sort.h"
-
 #include "util.h"
 
 void aqnote_sort_bubble(int array[], int n) {
-    int i, j, tmp;
+    int i, j;
     for (i = 0; i < n - 1; i++) {
         for (j = 0; j < n - 1 - i; j++) {
             if (array[j] > array[j + 1])

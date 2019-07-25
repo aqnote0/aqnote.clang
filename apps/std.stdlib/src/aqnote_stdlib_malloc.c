@@ -10,8 +10,8 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  "Peng Li"<aqnote@aqnote.com>, 
- *   Organization:  
+ *         Author:  "Peng Li"<aqnote@aqnote.com>,
+ *   Organization:
  *
  * =====================================================================================
  */
@@ -26,8 +26,7 @@
 // - 分配一个 10 byte 空间的 char数组
 // - 分配一个 10 * 4 byte 空间的 int数组
 //////////////////////////////////////////////////////////////////////////////
-void test_memory_malloc1()
-{
+void test_memory_malloc1() {
     printf("\n////////////////////////////////\n");
     printf("%s\n", __func__);
     printf("////////////////////////////////\n\n");
@@ -58,18 +57,21 @@ void test_memory_malloc1()
     int *p2 = calloc(10, sizeof(int));
     // 打印指针的地址、指针的内容（指针指向的内存地址）
     // p The argument shall be a pointer to void.
-    // The value of the pointer is converted to a sequence of printing characters,
-    // in an implementation-defined manner.
-    printf("p2 address=%p, value=%p, isnull=%s\n", (void *)&p2, p2, (p2 == NULL) ? "TRUE" : "FALSE");
-    int *p3 = realloc(p2, pow(2, 48)); // 分配 $2^32$=4G $2^33$=8G $2^34$=16G $2^48$=256T
-    printf("p2 address=%p, value=%p, isnull=%s\n", (void *)&p2, p2, (p2 == NULL) ? "TRUE" : "FALSE");
-    printf("p3 address=%p, value=%p, isnull=%s\n", (void *)&p3, p3, (p3 == NULL) ? "TRUE" : "FALSE");
+    // The value of the pointer is converted to a sequence of printing
+    // characters, in an implementation-defined manner.
+    printf("p2 address=%p, value=%p, isnull=%s\n", (void *)&p2, p2,
+           (p2 == NULL) ? "TRUE" : "FALSE");
+    int *p3 = realloc(
+        p2, pow(2, 48)); // 分配 $2^32$=4G $2^33$=8G $2^34$=16G $2^48$=256T
+    printf("p2 address=%p, value=%p, isnull=%s\n", (void *)&p2, p2,
+           (p2 == NULL) ? "TRUE" : "FALSE");
+    printf("p3 address=%p, value=%p, isnull=%s\n", (void *)&p3, p3,
+           (p3 == NULL) ? "TRUE" : "FALSE");
     if (p3) // p3 not null means p2 was freed by realloc
     {
         printf("enter p3\n");
         free(p3);
-    }
-    else // p3 null means p2 was not freed
+    } else // p3 null means p2 was not freed
     {
         printf("enter p2\n");
         free(p2);
@@ -81,25 +83,25 @@ void test_memory_malloc1()
 //////////////////////////////////////////////////////////////////////////////
 int memory_malloc2(char **pdata);
 
-int test_memory_malloc2()
-{
+int test_memory_malloc2() {
     printf("\n////////////////////////////////\n");
     printf("%s\n", __func__);
     printf("////////////////////////////////\n\n");
 
     char *data;
-    int result = memory_malloc2(&data);
+    int   result = memory_malloc2(&data);
     if (result == 0)
         printf("%s\n", data);
     else
         printf("%s error\n", __func__);
+
+    return 0;
 }
 
 /**
  * 函数说明：测试函数调用内存分配，传入指针方式
-*/
-int memory_malloc2(char **pdata)
-{
+ */
+int memory_malloc2(char **pdata) {
     *pdata = "aaa";
     return 0;
 }
@@ -109,29 +111,27 @@ int memory_malloc2(char **pdata)
 //////////////////////////////////////////////////////////////////////////////
 char *memory_malloc3();
 
-int test_memory_malloc3()
-{
+int test_memory_malloc3() {
     printf("\n////////////////////////////////\n");
     printf("%s\n", __func__);
     printf("////////////////////////////////\n\n");
 
     char *data;
     data = memory_malloc3();
-    if (data != NULL)
-    {
+    if (data != NULL) {
         printf("%s\n", data);
         free(data);
-    }
-    else
+    } else
         printf("%s error\n", __func__);
+
+    return 0;
 }
 /**
  * 函数说明：测试函数调用内存分配，内部分配
-*/
-char *memory_malloc3()
-{
+ */
+char *memory_malloc3() {
     char *x = malloc(10);
-    x = "bbb";
+    x       = "bbb";
     return x;
 }
 
@@ -140,19 +140,17 @@ char *memory_malloc3()
 // 函数说明：测试内存泄漏
 // 测试方法：`make memcheck`
 //////////////////////////////////////////////////////////////////////////////
-void test_memory_leak()
-{
+void test_memory_leak() {
     printf("\n////////////////////////////////\n");
     printf("%s\n", __func__);
     printf("////////////////////////////////\n\n");
 
     char *x = malloc(10);
-    x = "ddd";
+    x       = "ddd";
     printf("%s\n", x);
 }
 
-int aqnote_stdlib_malloc()
-{
+int aqnote_stdlib_malloc() {
     test_memory_malloc1();
     // test_memory_malloc2();
     // test_memory_malloc3();

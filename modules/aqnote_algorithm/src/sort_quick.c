@@ -16,6 +16,7 @@
  * =====================================================================================
  */
 #include "aqnote/algorithm/linked_list.h"
+#include "util.h"
 
 #include <stdlib.h>
 

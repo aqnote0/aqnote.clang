@@ -4,7 +4,7 @@
 #include <string.h>
 
 int main() {
-    char  name[64 + 1];
+    char  name[64];
     char *desc;
 
     strcpy(name, "Hello world!");

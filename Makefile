@@ -16,14 +16,14 @@ export PROJECT_MODULES_HOME 	= ${PROJECT_HOME}/modules
 export PROJECT_3RDPARTY_HOME	= ${PROJECT_HOME}/3rdparty
 export PROJECT_MAKEFILE_HOME	= ${PROJECT_HOME}/mk
 
-modules = \
-	modules/aqnote_a modules/aqnote_b apps/aqnote.template	\
+modules = apps/aqnote.test \
 	apps/aqnote.origin \
-	modules/moduleA modules/moduleB apps/multimodule 	\
+	modules/aqnote_ta modules/aqnote_tb apps/aqnote.template	\
+	modules/aqnote_mma modules/aqnote_mmb apps/aqnote.multimodule 	\
 	modules/aqnote_algorithm apps/algorithm.test \
-	# apps/std.helloworld	\
-	# apps/std.assert		\
-	# apps/std.stdlib		\
+	apps/std.stdlib		\
+	apps/std.assert		\
+	apps/std.stdio \
 	# apps/dyload \
 	# apps/framebuffer \
 	# apps/gtk.lifecycle 	\

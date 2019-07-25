@@ -19,6 +19,10 @@
 #ifndef _AQNOTE_ALGORITHM_LINKED_LIST_H
 #define _AQNOTE_ALGORITHM_LINKED_LIST_H
 
+#ifdef __CPLUSPLUS
+extern "C" {
+#endif
+
 typedef struct _aqnote_linked_list {
     int                         key;
     struct _aqnote_linked_list *next;
@@ -29,5 +33,9 @@ aqnote_linked_list *aqnote_linked_list_invert(aqnote_linked_list *head);
 
 void aqnote_linked_list_print(aqnote_linked_list *node);
 void aqnote_linked_list_invert_print(aqnote_linked_list *node);
+
+#ifdef __CPLUSPLUS
+}
+#endif
 
 #endif

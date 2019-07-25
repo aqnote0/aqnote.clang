@@ -27,13 +27,13 @@ MODULE_TOOLCHAIN	= x86_64-linux-gnu
 ###############################
 ## Depend Module 
 ###############################
-DEPEND_MODULE_LIST 			= AQNOTE_A AQNOTE_B
+DEPEND_MODULE_LIST 			= AQNOTE_TA AQNOTE_TB
 
-DEPEND_MODULE_AQNOTE_A_HOME = $(PROJECT_MODULES_HOME)/aqnote_a
-DEPEND_MODULE_AQNOTE_A_LIB	= aqnote_a
+DEPEND_MODULE_AQNOTE_TA_HOME = $(PROJECT_MODULES_HOME)/aqnote_ta
+DEPEND_MODULE_AQNOTE_TA_LIB	= aqnote_ta
 
-DEPEND_MODULE_AQNOTE_B_HOME = $(PROJECT_MODULES_HOME)/aqnote_b
-DEPEND_MODULE_AQNOTE_B_LIB	= aqnote_b
+DEPEND_MODULE_AQNOTE_TB_HOME = $(PROJECT_MODULES_HOME)/aqnote_tb
+DEPEND_MODULE_AQNOTE_TB_LIB	= aqnote_tb
 
 ###############################
 ## Depend 3rdParty
@@ -55,8 +55,8 @@ DEPEND_NONSTD_FFMPEG_STATIC 		= 1
 ###############################
 ## Depend PKG-CONFIG
 ###############################
-# DEPEND_PKG_CONFIG   	= /opt/aqnote/opencv/lib/pkgconfig
-# DEPEND_PKG			= opencv
+DEPEND_PKG_CONFIG   = /opt/aqnote/ffmpeg/lib/pkgconfig
+DEPEND_PKG			=  libavformat libavcodec libavdevice libavfilter libavutil libswresample libswscale
 
 ###############################
 ## Depend STD

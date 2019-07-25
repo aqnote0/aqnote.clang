@@ -27,13 +27,13 @@ COMMAND_LINK = $(foreach lib, $1,$(if $2,$2 -l$(lib),-l$(lib)))
 ###############################
 ifneq "" "$(DEPEND_MODULE_LIST)"
 	CFLAGS += $(foreach module, $(DEPEND_MODULE_LIST), -I$(DEPEND_MODULE_$(module)_HOME)/include)
-	LDFLAGS += $(foreach module, $(DEPEND_MODULE_LIST), 							\
-					-L$(DEPEND_MODULE_$(module)_HOME)/lib											\
-					$(if $(DEPEND_MODULE_$(module)_STATIC), 										\
-						$(call COMMAND_LINK, $(DEPEND_MODULE_$(module)_LIB), $(LINK_STATIC_OPT)), 	\
-						$(call COMMAND_LINK, $(DEPEND_MODULE_$(module)_LIB), $(LINK_DYNAMIC_OPT2)) 	\
-					)																				\
-					$(if $(DEPEND_MODULE_$(module)_STATIC), $(LINK_DYNAMIC_OPT))					\
+	LDFLAGS += $(foreach module, $(DEPEND_MODULE_LIST), \
+					-L$(DEPEND_MODULE_$(module)_HOME)/lib \
+					$(if $(DEPEND_MODULE_$(module)_STATIC), \
+						$(call COMMAND_LINK, $(DEPEND_MODULE_$(module)_LIB), $(LINK_STATIC_OPT)), \
+						$(call COMMAND_LINK, $(DEPEND_MODULE_$(module)_LIB), $(LINK_DYNAMIC_OPT2)) \
+					) \
+					$(if $(DEPEND_MODULE_$(module)_STATIC), $(LINK_DYNAMIC_OPT)) \
 				)
 endif
 

@@ -18,6 +18,10 @@
 #ifndef _AQNOTE_ALGORITHM_SORT_H
 #define _AQNOTE_ALGORITHM_SORT_H
 
+#ifdef __CPLUSPLUS
+extern "C" {
+#endif
+
 /**
  * DESC: 冒泡排序
  *
@@ -57,5 +61,9 @@ void aqnote_sort_select(int array[], int n);
  * @return
  */
 void aqnote_sort_quick(int array[], int n);
+
+#ifdef __CPLUSPLUS
+}
+#endif
 
 #endif

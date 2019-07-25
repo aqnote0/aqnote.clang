@@ -7,6 +7,7 @@
         "Makeconfig": "makefile",
         "*.txt": "automake",
         "*.mak": "makefile",
+        "*.clang-format": "yaml",
         "string": "cpp",
         "pthread.h": "c",
         "aqnote_sort.h": "c",
@@ -20,7 +21,10 @@
         "stdint.h": "c",
         "if.h": "c",
         "if_link.h": "c",
-        "sort.h": "c"
+        "sort.h": "c",
+        "elf.h": "c",
+        "aqnote.h": "c",
+        "linked_list.h": "c"
     },
     "restructuredtext.confPath": ""
 }

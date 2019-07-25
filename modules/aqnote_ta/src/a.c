@@ -1,27 +1,28 @@
 /*
  * =====================================================================================
  *
- *       Filename:  main.c
+ *       Filename:  a.c
  *
  *    Description:
  *
  *        Version:  1.0
- *        Created:  01/30/19 15:45:03
+ *        Created:  05/31/19 11:18:43
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  "Peng Li"<aqnote@aqnote.com>,
+ *         Author:  YOUR NAME (),
  *   Organization:
  *
  * =====================================================================================
  */
-#include <stdlib.h>
-#include "aqnote_stdlib.h"
+#include "aqnote/a/a.h"
 
-int main(int argc, char **argv) {
-    aqnote_stdlib_malloc();
-    // aqnote_stdlib_qsort();
-    // aqnote_stdlib_sizeof();
+#include <stdio.h>
 
+
+
+int a_print() {
+
+    printf("HelloWorld\n");
     return 0;
 }

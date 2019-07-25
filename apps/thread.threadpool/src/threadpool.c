@@ -60,8 +60,8 @@ extern void pool_init(int max_thread_num) {
     pool->max_thread_num = max_thread_num;
     pool->cur_queue_size = 0;
     pool->shutdown       = 0;
-    pool->threadid       = (pthread_t *)malloc(max_thread_num * sizeof(pthread_t));
-    int i                = 0;
+    pool->threadid = (pthread_t *)malloc(max_thread_num * sizeof(pthread_t));
+    int i          = 0;
     for (i = 0; i < max_thread_num; i++) {
         pthread_create(&(pool->threadid[i]), NULL, thread_routine, NULL);
     }
@@ -70,10 +70,11 @@ extern void pool_init(int max_thread_num) {
 /*向线程池中加入任务*/
 extern int pool_add_worker(void *(*process)(void *arg), void *arg) {
     /*构造一个新任务*/
-    CThread_worker *newworker = (CThread_worker *)malloc(sizeof(CThread_worker));
-    newworker->process        = process;
-    newworker->arg            = arg;
-    newworker->next           = NULL; /*别忘置空*/
+    CThread_worker *newworker =
+        (CThread_worker *)malloc(sizeof(CThread_worker));
+    newworker->process = process;
+    newworker->arg     = arg;
+    newworker->next    = NULL; /*别忘置空*/
     pthread_mutex_lock(&(pool->queue_lock));
     /*将任务加入到等待队列中*/
     CThread_worker *member = pool->queue_head;

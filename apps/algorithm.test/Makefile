@@ -12,6 +12,7 @@ include ../../mk/config.mk
 # Constant
 MODULE_NAME 		= algorithm.test
 MODULE_INTRODUCE 	=
+MODULE_TARGET 		= $(MODULE_NAME).app
 
 # Depends
 ## Depend Module 
@@ -22,7 +23,6 @@ DEPEND_MODULE_ALGORITHM_STATIC	= 1
 
 # Compile
 MODULE_LINK 	= c
-# MODULE_BUILD 		= DEBUG
-MODULE_TARGET 		= $(MODULE_NAME).app
+# MODULE_BUILD 	= DEBUG
 
 include ${PROJECT_MAKEFILE_HOME}/global.mk
