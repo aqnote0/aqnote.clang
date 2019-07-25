@@ -24,7 +24,9 @@
         "sort.h": "c",
         "elf.h": "c",
         "aqnote.h": "c",
-        "linked_list.h": "c"
+        "linked_list.h": "c",
+        "iostream": "cpp",
+        "iomanip": "cpp"
     },
     "restructuredtext.confPath": ""
 }

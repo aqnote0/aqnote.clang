@@ -24,6 +24,8 @@ modules = apps/aqnote.test \
 	apps/std.stdlib		\
 	apps/std.assert		\
 	apps/std.stdio \
+	apps/opencv.affine \
+	apps/opencv.calibration.single.1 \
 	# apps/dyload \
 	# apps/framebuffer \
 	# apps/gtk.lifecycle 	\
