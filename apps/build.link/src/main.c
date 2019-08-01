@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  ex1.c
+ *       Filename:  main.c
  *
  *    Description:
  *
  *        Version:  1.0
- *        Created:  01/30/19 21:11:45
+ *        Created:  05/30/19 19:57:03
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,12 +16,10 @@
  * =====================================================================================
  */
 #include <stdlib.h>
-#include <stdio.h>
 
-int main(int argc, char *argv[]) {
-    puts("Hello World.");
-    puts("aaaaaaaaaa");
-    puts("中文");
-    puts("a\tb\bc\n");
+void function(void);
+
+int main(void) {
+    function();
     return 0;
 }

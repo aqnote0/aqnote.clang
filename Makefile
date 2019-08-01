@@ -16,17 +16,16 @@ export PROJECT_MODULES_HOME 	= ${PROJECT_HOME}/modules
 export PROJECT_3RDPARTY_HOME	= ${PROJECT_HOME}/3rdparty
 export PROJECT_MAKEFILE_HOME	= ${PROJECT_HOME}/mk
 
-modules = apps/aqnote.test \
-	apps/aqnote.origin \
-	modules/aqnote_ta modules/aqnote_tb apps/aqnote.template	\
-	modules/aqnote_mma modules/aqnote_mmb apps/aqnote.multimodule 	\
+modules = apps/app.test \
+	apps/build.step \
+	apps/build.link \
+	apps/build.dyload \
+	modules/aqnote_ta modules/aqnote_tb apps/app.template \
 	modules/aqnote_algorithm apps/algorithm.test \
-	apps/std.stdlib		\
-	apps/std.assert		\
+	apps/std.stdlib	\
 	apps/std.stdio \
 	apps/opencv.affine \
 	apps/opencv.calibration.single.1 \
-	# apps/dyload \
 	# apps/framebuffer \
 	# apps/gtk.lifecycle 	\
 	# apps/json-c.lifecycle 	\
