@@ -12,7 +12,7 @@ include ../../mk/config.mk
 ###############################
 # Module Info
 ###############################
-MODULE_NAME 		= opencv.calibration.single.1
+MODULE_NAME 		= opencv.calibration.single.2
 MODULE_INTRODUCE 	= opencv单摄像头标定
 MODULE_TARGET 		= $(MODULE_NAME).app
 
@@ -40,7 +40,7 @@ MODULE_TOOLCHAIN	= x86_64-linux-gnu
 DEPEND_NONSTD_LIST  				= OPENCV #FFMPEG
 
 DEPEND_NONSTD_OPENCV_HOME 			= /opt/aqnote/opencv
-DEPEND_NONSTD_OPENCV_LIB			= opencv_core opencv_imgproc opencv_imgcodecs opencv_highgui opencv_calib3d
+DEPEND_NONSTD_OPENCV_LIB			= opencv_core opencv_imgproc opencv_imgcodecs opencv_highgui opencv_calib3d opencv_videoio opencv_features2d
 
 DEPEND_NONSTD_FFMPEG_HOME 			= /opt/aqnote/ffmpeg
 DEPEND_NONSTD_FFMPEG_LIB			= avutil avformat avcodec swscale
