@@ -28,10 +28,8 @@ MODULE_TOOLCHAIN	= x86_64-linux-gnu
 ## Depend Module 
 ###############################
 DEPEND_MODULE_LIST 			= AQNOTE_TA AQNOTE_TB
-
 DEPEND_MODULE_AQNOTE_TA_HOME = $(PROJECT_MODULES_HOME)/aqnote_ta
 DEPEND_MODULE_AQNOTE_TA_LIB	= aqnote_ta
-
 DEPEND_MODULE_AQNOTE_TB_HOME = $(PROJECT_MODULES_HOME)/aqnote_tb
 DEPEND_MODULE_AQNOTE_TB_LIB	= aqnote_tb
 
@@ -44,10 +42,8 @@ DEPEND_THIRD_LIST	=
 ## Depend NONSTD
 ###############################
 DEPEND_NONSTD_LIST  				= OPENCV FFMPEG
-
 DEPEND_NONSTD_OPENCV_HOME 			= /opt/aqnote/opencv
 DEPEND_NONSTD_OPENCV_LIB			= opencv_core opencv_imgproc opencv_imgcodecs opencv_highgui
-
 DEPEND_NONSTD_FFMPEG_HOME 			= /opt/aqnote/ffmpeg
 DEPEND_NONSTD_FFMPEG_LIB			= avutil avformat avcodec swscale
 DEPEND_NONSTD_FFMPEG_STATIC 		= 1
